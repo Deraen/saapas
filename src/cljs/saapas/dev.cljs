@@ -4,6 +4,6 @@
 
 (enable-console-print!)
 
-(reload/connect "ws://localhost:8090")
-
-(saapas/main)
+(reload/connect "ws://localhost:8090"
+                {:on-jsload (fn []
+                              (saapas/main))})

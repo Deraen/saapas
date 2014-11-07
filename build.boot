@@ -32,9 +32,9 @@
   []
   (comp
     (watch)
-    (cljx)
     ; This starts a normal repls with piggieback middleware
     (cljs-repl)
+    (cljx)
     (cljs :source-map true
           :optimizations :none)
     (reload)))

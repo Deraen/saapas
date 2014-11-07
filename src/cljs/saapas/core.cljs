@@ -14,3 +14,5 @@
           (dom/h1 (:text app)))))
     app-state
     {:target (. js/document (getElementById "app"))}))
+
+(main)
