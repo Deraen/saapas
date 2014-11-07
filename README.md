@@ -1,5 +1,7 @@
 # saapas
 
+*WIP*
+
 Example project for Cljs/Om using Boot instead of Lein.
 Inspired by [chestnut](https://github.com/plexus/chestnut).
 
@@ -27,10 +29,3 @@ $ boot dev-repl
 - [ ] Production build (uberjar)
 - [ ] Tests (midje)
   - Blocked: Requires midje plugin for Boot
-
-## License
-
-Copyright © 2014 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
