@@ -6,8 +6,9 @@
                  :url "http://opensource.org/licenses/mit-license.php"}])
 
 (set-env!
-  :src-paths #{"src/clj" "src/cljs" "src/cljx"}
-  :rsc-paths #{"resources/public"}
+  :src-paths #{"src/clj" "src/cljs" "src/cljx"
+               ; Index.html etc.
+               "resources"}
   :dependencies '[[adzerk/boot-cljs "0.0-2371-20"]
                   [adzerk/boot-cljs-repl  "0.1.5"]
                   [adzerk/boot-reload     "0.1.3"]

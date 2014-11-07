@@ -12,6 +12,9 @@
   (io/resource "index.html") [] [:body] (if is-dev? inject-devmode-html identity))
 
 (defroutes routes
+  ; Cljs
+  (resources "/" {:root ""})
+  ; Css
   (resources "/")
   (resources "/react" {:root "react"})
   (GET "/*" req (page)))
