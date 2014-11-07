@@ -26,7 +26,6 @@ $ boot dev-repl
 ## TODO
 
 - [ ] Cljx nrepl middleware
-  - Blocked: Looks like it's not possible to add middleware when using cljs-repl
 - [ ] Less compilation and css livereload
   - Blocked: Requires less plugin for Boot
 - [ ] Production build (uberjar)
