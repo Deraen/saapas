@@ -1,4 +1,4 @@
-(ns saapas.date)
+(ns saapas.hello)
 
 (defn foo-cljx [x]
   "I don't do a whole lot."

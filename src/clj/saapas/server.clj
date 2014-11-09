@@ -1,24 +1,21 @@
 (ns saapas.server
   (:require [clojure.java.io :as io]
-            [saapas.dev :refer [is-dev? inject-devmode-html]]
             [compojure.core :refer [GET defroutes]]
             [compojure.route :refer [resources]]
             [compojure.handler :refer [api]]
-            [net.cgrand.enlive-html :refer [deftemplate]]
-            [ring.middleware.reload :as reload]
+            [ring.util.response :refer [redirect]]
             [org.httpkit.server :refer [run-server]]))
 
-(deftemplate page
-  (io/resource "index.html") [] [:body] (if is-dev? inject-devmode-html identity))
-
 (defroutes routes
-  ; Cljs
-  (resources "/" {:root ""})
-  ; Css
   (resources "/")
+  ; FIXME: https://github.com/adzerk/boot-cljs/issues/4
+  ; src="../public/out/goog/base.js"
+  (resources "/public")
   (resources "/react" {:root "react"})
-  (GET "/*" req (page)))
+  (GET "/" []
+    (redirect "/index.html")))
 
+; FIXME:
 (defn run [& [port]]
   (defonce ^:private server
     (do
