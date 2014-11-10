@@ -13,6 +13,7 @@
                   [adzerk/boot-reload     "0.1.4"]
                   [deraen/boot-cljx       "0.1.0-SNAPSHOT"]
 
+                  [org.clojure/tools.namespace "0.2.7"]
                   [ring "1.3.1"]
                   [compojure "1.2.0"]
                   [om "0.7.3"]
@@ -23,9 +24,8 @@
   '[adzerk.boot-cljs      :refer :all]
   '[adzerk.boot-cljs-repl :refer :all]
   '[adzerk.boot-reload    :refer :all]
-  '[deraen.boot-cljx      :refer :all])
-
-(require 'saapas.server)
+  '[deraen.boot-cljx      :refer :all]
+  '[saapas.main           :refer [start-app]])
 
 (deftask dev
   "Start the dev env..."
@@ -35,6 +35,7 @@
     ; This starts a normal repls with piggieback middleware
     (cljs-repl)
     (cljx)
+    (start-app)
     (cljs :output-to "public/main.js"
           :source-map true
           :unified true

@@ -15,16 +15,15 @@
   (GET "/" []
     (redirect "/index.html")))
 
-; FIXME:
-(defn run [& [port]]
-  (defonce ^:private server
-    (do
-      (let [port (Integer. (or port 10555))]
-        (print "Starting web server on port" port ".\n")
-        (run-server #'saapas.server/routes
-                    {:port port
-                     :join? false}))))
-  server)
+(defn stop
+  [{:keys [http-kit] :as ctx}]
+  (when http-kit
+    (http-kit))
+  {})
 
-(defn -main [& [port]]
-  (run port))
+(defn start
+  [ctx & [port]]
+  (let [port (Integer. (or port 10555))
+        http-kit (run-server #'saapas.server/routes {:port port :join? false})]
+    (println "Starting web server on port" port)
+    {:http-kit http-kit}))

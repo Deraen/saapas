@@ -9,12 +9,15 @@ For now, this is a example project instead of a lein template.
 
 ## Development
 
-To start everything (nrepl server, cljx, cljs build, livereload) run:
-*NOTE: Should maybe start the repl in saapas.server ns*
+To start everything (nrepl server, cljx, cljs build, livereload, the app) run:
 ```
 $ boot dev
-boot.user=> (require 'saapas.server)
-boot.user=> (saapas.server/run)
+boot.user=>
+# App should now be running, you can use following commands to restart the app
+boot.user=> (in-ns 'saapas.main)
+saapas.main=> (stop) ; Stop app
+saapas.main=> (start); Start app
+saapas.main=> (reset) ; Stop, reload all namespaces, start
 ```
 
 If you want a repl where you can execute commands, you can start a nrepl
