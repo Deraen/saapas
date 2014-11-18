@@ -16,7 +16,7 @@ boot.user=>
 # App should now be running, you can use following commands to restart the app
 boot.user=> (in-ns 'saapas.main)
 saapas.main=> (stop) ; Stop app
-saapas.main=> (start); Start app
+saapas.main=> (start) ; Start app
 saapas.main=> (reset) ; Stop, reload all namespaces, start
 ```
 

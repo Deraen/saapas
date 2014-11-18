@@ -6,19 +6,18 @@
                  :url "http://opensource.org/licenses/mit-license.php"}])
 
 (set-env!
-  :src-paths #{"src/clj" "src/cljs" "src/cljx"}
-  :rsc-paths #{"resources"}
-  :dependencies '[[adzerk/boot-cljs "0.0-2371-23"]
-                  [adzerk/boot-cljs-repl  "0.1.5"]
-                  [adzerk/boot-reload     "0.1.4"]
+  :src-paths #{"src/clj" "src/cljs" "src/cljx" "resources"}
+  :dependencies '[[adzerk/boot-cljs "0.0-2371-25"]
+                  [adzerk/boot-cljs-repl  "0.1.6"]
+                  [adzerk/boot-reload     "0.1.6"]
                   [deraen/boot-cljx       "0.1.0-SNAPSHOT"]
 
                   [org.clojure/tools.namespace "0.2.7"]
                   [ring "1.3.1"]
-                  [compojure "1.2.0"]
-                  [om "0.7.3"]
+                  [compojure "1.2.1"]
+                  [om "0.8.0-alpha2"]
                   [http-kit "2.1.19"]
-                  [prismatic/om-tools "0.3.3"]])
+                  [prismatic/om-tools "0.3.6"]])
 
 (require
   '[adzerk.boot-cljs      :refer :all]
