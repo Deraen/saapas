@@ -6,6 +6,7 @@
 (defonce app-state (atom {:text "Hello Saapas!"}))
 
 (defn main []
+  (js/console.log "Starting the app")
   (om/root
     (fn [app owner]
       (reify

@@ -8,8 +8,7 @@
 
 (defroutes routes
   (resources "/")
-  ; FIXME: https://github.com/adzerk/boot-cljs/issues/4
-  ; src="../public/out/goog/base.js"
+  ; FIXME: Boot-reload is using from URIs
   (resources "/public")
   (resources "/react" {:root "react"})
   (GET "/" []
