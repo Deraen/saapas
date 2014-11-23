@@ -27,3 +27,6 @@
         http-kit (run-server #'saapas.server/routes {:port port :join? false})]
     (println "Starting web server on port" port)
     {:http-kit http-kit}))
+
+(defn- main [& _]
+  (start {}))
