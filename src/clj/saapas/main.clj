@@ -1,8 +1,7 @@
 (ns saapas.main
-  {:boot/export-tasks true}
-  (:require [clojure.tools.namespace.repl :as ns-tools]
-            [boot.core :as boot]
-            [boot.task-helpers :refer [once]]))
+  (:require
+    [clojure.tools.namespace.repl :as ns-tools])
+  (:gen-class))
 
 (ns-tools/disable-reload!)
 
@@ -26,9 +25,6 @@
   (stop)
   (ns-tools/refresh :after 'saapas.main/go))
 
-(boot/deftask start-app
-  "Start the ring app"
-  []
-  (once
-    (boot/with-post-wrap
-      (go))))
+(defn -main [& args]
+  (require 'saapas.server)
+  ((resolve 'saapas.server/start) {}))

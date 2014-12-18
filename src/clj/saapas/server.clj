@@ -4,15 +4,17 @@
             [compojure.route :refer [resources]]
             [compojure.handler :refer [api]]
             [ring.util.response :refer [redirect]]
-            [org.httpkit.server :refer [run-server]]))
+            [ring.util.http-response :refer :all]
+            [org.httpkit.server :refer [run-server]]
+            [saapas.index :refer [index-page]]))
 
 (defroutes routes
-  (resources "/")
-  ; FIXME: Boot-reload is using from URIs
-  (resources "/public")
-  (resources "/react" {:root "react"})
+  (resources "/" {:root "public"})
+  ; FIXME: boot-cljs will provide reverse routing fn which we
+  ; can use to generate proper urls
+  (resources "/public" {:root "public"})
   (GET "/" []
-    (redirect "/index.html")))
+    (ok index-page)))
 
 (defn stop
   [{:keys [http-kit] :as ctx}]
@@ -26,6 +28,3 @@
         http-kit (run-server #'saapas.server/routes {:port port :join? false})]
     (println "Starting web server on port" port)
     {:http-kit http-kit}))
-
-(defn- main [& _]
-  (start {}))

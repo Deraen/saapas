@@ -28,9 +28,9 @@ $ boot dev-repl
 
 ## TODO
 
-- [ ] Cljx nrepl middleware
-- [ ] Less compilation and css livereload
+- [x] Cljx nrepl middleware
+- [x] Less compilation and css livereload
   - Blocked: Requires less plugin for Boot
-- [ ] Production build (uberjar)
+- [x] Production build (uberjar)
 - [ ] Tests (midje)
   - Blocked: Requires midje plugin for Boot
