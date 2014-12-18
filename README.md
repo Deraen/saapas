@@ -7,6 +7,10 @@ Inspired by [chestnut](https://github.com/plexus/chestnut).
 
 For now, this is a example project instead of a lein template.
 
+## Prerequisites
+
+[Boot](https://github.com/tailrecursion/boot#getting-started) installed.
+
 ## Development
 
 To start everything (nrepl server, cljx, cljs build, livereload, the app) run:
