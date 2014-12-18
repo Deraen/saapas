@@ -45,14 +45,15 @@
   []
   (comp
     (watch)
-    ; This starts a normal repls with piggieback middleware
+    ; Should be before cljs so the generated code is picked up
+    (reload :on-jsload 'saapas.core/main)
     (less)
     (cljx)
+    ; This starts a normal repls with piggieback middleware
     (cljs-repl)
     (add-js-lib :path "react/react.js" :target "public/react.inc.js")
     (cljs :optimizations :none :unified-mode true)
-    (start-app)
-    (reload :on-jsload 'saapas.core/main)))
+    (start-app)))
 
 (deftask dev-repl
   "Connect to the repl started by the dev task."
