@@ -19,7 +19,7 @@ For now, this is a example project instead of a lein template.
     - \*.cljx changes trigger [cljx](https://github.com/Deraen/boot-cljx) compilation
     - \*.less changes trigger [less](https://github.com/Deraen/boot-less) compilation
     - \*.cljx changes trigger [cljs](https://github.com/adzerk/boot-cljs) compilation
-  - [Livereload](https://github.com/adzerk/boot-reload)
+  - [Live-reloading](https://github.com/adzerk/boot-reload)
     - \*.js, \*.css, \*.html changes send notification to browser throught websocket and browser loads the new files
 - `package` task creates uberjar
   - Cljs will be compiled using `:advanced` optimization
