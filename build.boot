@@ -1,12 +1,3 @@
-(task-options!
-  pom {:project 'saapas
-       :version "0.1.0-SNAPSHOT"
-       :description "Application template for Cljs/Om with live reloading, using Boot."
-       :license {:name "The MIT License (MIT)"
-                 :url "http://opensource.org/licenses/mit-license.php"}}
-  aot {:namespace #{'saapas.main}}
-  jar {:main 'saapas.main})
-
 (set-env!
   :source-paths #{"src/cljs" "src/cljx" "src/less"}
   :resource-paths #{"src/clj"}
@@ -17,7 +8,7 @@
                   [deraen/boot-less       "0.1.0-SNAPSHOT"]
 
                   [org.clojure/clojure "1.6.0"]
-                  [org.clojure/tools.namespace "0.2.7"]
+                  [org.clojure/tools.namespace "0.2.8"]
                   [ring "1.3.1"]
                   [metosin/ring-http-response "0.5.2"]
                   [compojure "1.2.1"]
@@ -34,11 +25,15 @@
   '[saapas.boot           :refer :all])
 
 (task-options!
+  pom {:project 'saapas
+       :version "0.1.0-SNAPSHOT"
+       :description "Application template for Cljs/Om with live reloading, using Boot."
+       :license {:name "The MIT License (MIT)"
+                 :url "http://opensource.org/licenses/mit-license.php"}}
+  aot {:namespace #{'saapas.main}}
+  jar {:main 'saapas.main}
   cljs {:output-to "public/main.js"
         :source-map true})
-
-;; Small task to copy js files from dependencies to
-;; proper paths where boot will pick them up
 
 (deftask dev
   "Start the dev env..."
@@ -66,8 +61,10 @@
   (comp
     (less)
     (cljx)
-    (add-js-lib :package true :path "react/react.min.js" :target "public/react.inc.js")
-    (add-js-lib :package true :path "react/externs/react.js" :target "public/react.ext.js")
+    ; Target path doesn't matter but name does
+    ; These are not included in uberjar
+    (add-js-lib :package true :path "react/react.min.js"     :target "react.inc.js")
+    (add-js-lib :package true :path "react/externs/react.js" :target "react.ext.js")
     (cljs :optimizations :advanced)
     (aot)
     (pom)

@@ -18,7 +18,7 @@
       fileset)))
 
 (deftask add-js-lib
-  "Add non-boot ready js library to the fileset"
+  "Add non-boot ready js files to the fileset"
   [p path PATH str "The path of file in classpath"
    t target TARGET str "Target path"
    x package bool "Don't include files in result"]
