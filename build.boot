@@ -65,5 +65,3 @@
     (pom)
     (uber)
     (jar)))
-
-; vim: ft=clojure:
