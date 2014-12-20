@@ -23,7 +23,7 @@ saapas.main=> (reset) ; Stop, reload all namespaces, start
 If you want a repl where you can execute commands, you can start a nrepl
 client which connects to the nrepl server started by the dev task by running
 ```
-$ boot dev-repl
+$ boot repl -c
 ```
 
 ## TODO

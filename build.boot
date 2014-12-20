@@ -50,11 +50,6 @@
     (cljs :optimizations :none :unified-mode true)
     (start-app)))
 
-(deftask dev-repl
-  "Connect to the repl started by the dev task."
-  []
-  (repl :client true))
-
 (deftask package
   "Build the package"
   []
