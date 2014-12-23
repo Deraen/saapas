@@ -6,19 +6,22 @@
                   [adzerk/boot-reload     "0.2.1"]
                   [deraen/boot-cljx       "0.2.1"]
                   [deraen/boot-less       "0.1.0-SNAPSHOT"]
+                  [cljsjs/boot-cljsjs     "0.3.0"]
 
                   [org.clojure/clojure "1.6.0"]
                   [org.clojure/tools.namespace "0.2.8"]
                   [ring "1.3.1"]
                   [metosin/ring-http-response "0.5.2"]
                   [compojure "1.2.1"]
-                  [om "0.8.0-beta5"]
+                  [om "0.8.0-beta5" :exclusions [com.facebook/react]]
+                  [cljsjs/react "0.12.2-1"]
                   [http-kit "2.1.19"]])
 
 (require
   '[adzerk.boot-cljs      :refer :all]
   '[adzerk.boot-cljs-repl :refer :all]
   '[adzerk.boot-reload    :refer :all]
+  '[cljsjs.app            :refer :all]
   '[deraen.boot-cljx      :refer :all]
   '[deraen.boot-less      :refer :all]
   '[saapas.boot           :refer :all])
@@ -38,6 +41,7 @@
   "Start the dev env..."
   []
   (comp
+    (from-cljsjs)
     (watch)
     ; Should be before cljs so the generated code is picked up
     (reload :on-jsload 'saapas.core/main)
@@ -45,7 +49,6 @@
     (cljx)
     ; This starts a normal repls with piggieback middleware
     (cljs-repl)
-    (add-js-lib :path "react/react.js" :target "public/react.inc.js")
     (cljs :optimizations :none :unified-mode true)
     (start-app)))
 
@@ -53,12 +56,9 @@
   "Build the package"
   []
   (comp
+    (from-cljsjs :profile :production)
     (less)
     (cljx)
-    ; Target path doesn't matter but name does
-    ; These are not included in uberjar
-    (add-js-lib :package true :path "react/react.min.js"     :target "react.inc.js")
-    (add-js-lib :package true :path "react/externs/react.js" :target "react.ext.js")
     (cljs :optimizations :advanced)
     (aot)
     (pom)
