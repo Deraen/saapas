@@ -1,7 +1,6 @@
 (ns saapas.core
   (:require [om.core :as om :include-macros true]
-            [om-tools.dom :as dom :include-macros true]
-            [om-tools.core :refer-macros [defcomponent]]))
+            [om.dom :as dom :include-macros true]))
 
 (defonce app-state (atom {:y 2014}))
 
@@ -12,8 +11,9 @@
       (reify
         om/IRender
         (render [_]
-          (dom/div
-            (dom/h1 "Hello World! " (:y app))
+          (dom/div nil
+            (dom/h1 nil
+              "Hello World! " (:y app))
             (dom/button
               #js
               {:onClick (fn [_] (om/transact! app :y (partial + 5)))}

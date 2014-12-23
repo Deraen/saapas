@@ -3,7 +3,7 @@
   :resource-paths #{"src/clj"}
   :dependencies '[[adzerk/boot-cljs       "0.0-2411-5"]
                   [adzerk/boot-cljs-repl  "0.1.7"]
-                  [adzerk/boot-reload     "0.2.0"]
+                  [adzerk/boot-reload     "0.2.1"]
                   [deraen/boot-cljx       "0.2.1"]
                   [deraen/boot-less       "0.1.0-SNAPSHOT"]
 
@@ -12,9 +12,8 @@
                   [ring "1.3.1"]
                   [metosin/ring-http-response "0.5.2"]
                   [compojure "1.2.1"]
-                  [om "0.8.0-alpha2"]
-                  [http-kit "2.1.19"]
-                  [prismatic/om-tools "0.3.6"]])
+                  [om "0.8.0-beta5"]
+                  [http-kit "2.1.19"]])
 
 (require
   '[adzerk.boot-cljs      :refer :all]
@@ -42,7 +41,7 @@
     (watch)
     ; Should be before cljs so the generated code is picked up
     (reload :on-jsload 'saapas.core/main)
-    (less)
+    ; (less)
     (cljx)
     ; This starts a normal repls with piggieback middleware
     (cljs-repl)
