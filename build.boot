@@ -5,7 +5,7 @@
                   [adzerk/boot-cljs-repl  "0.1.7"]
                   [adzerk/boot-reload     "0.2.1"]
                   [deraen/boot-cljx       "0.2.1"]
-                  [deraen/boot-less       "0.1.0"]
+                  [deraen/boot-less       "0.1.1"]
                   [cljsjs/boot-cljsjs     "0.3.0"]
 
                   [org.clojure/clojure "1.6.0"]
