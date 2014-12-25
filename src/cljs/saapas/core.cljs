@@ -16,11 +16,13 @@
               "Hello World! " (:y app))
             (dom/button
               #js
-              {:onClick (fn [_] (om/transact! app :y (partial + 5)))}
+              {:className "btn btn-danger"
+               :onClick (fn [_] (om/transact! app :y (partial + 5)))}
               "+")
             (dom/button
               #js
-              {:onClick (fn [_] (om/transact! app :y dec))}
+              {:className "btn btn-primary"
+               :onClick (fn [_] (om/transact! app :y dec))}
               "-")))))
     app-state
     {:target (. js/document (getElementById "app"))}))

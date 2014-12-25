@@ -5,7 +5,7 @@
                   [adzerk/boot-cljs-repl  "0.1.7"]
                   [adzerk/boot-reload     "0.2.1"]
                   [deraen/boot-cljx       "0.2.1"]
-                  [deraen/boot-less       "0.1.0-SNAPSHOT"]
+                  [deraen/boot-less       "0.1.0"]
                   [cljsjs/boot-cljsjs     "0.3.0"]
 
                   [org.clojure/clojure "1.6.0"]
@@ -15,7 +15,8 @@
                   [compojure "1.2.1"]
                   [om "0.8.0-beta5" :exclusions [com.facebook/react]]
                   [cljsjs/react "0.12.2-1"]
-                  [http-kit "2.1.19"]])
+                  [http-kit "2.1.19"]
+                  [org.webjars/bootstrap "3.3.1"]])
 
 (require
   '[adzerk.boot-cljs      :refer :all]
@@ -45,7 +46,7 @@
     (watch)
     ; Should be before cljs so the generated code is picked up
     (reload :on-jsload 'saapas.core/main)
-    ; (less)
+    (less)
     (cljx)
     ; This starts a normal repls with piggieback middleware
     (cljs-repl)

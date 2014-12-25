@@ -11,13 +11,17 @@ For now, this is a example project instead of a lein template.
 - Simple [Om](https://github.com/swannodette/om) frontend
 - [Cljx](https://github.com/lynaghk/cljx) to write code targetting both Clojure and ClojureScript
 - [LESS](http://lesscss.org/) to write stylesheets (Disclaimer: boot-less still needs some love to work reliably)
+  - [boot-less](https://github.com/Deraen/boot-less) is able to import files from classpath
+  - You can add dependency to e.g. bootstrap from [webjars](https://webjars.org) to
+    your regular dependencies and then add `@import "bootstrap/less/bootstrap.less"`
+    to your `.less` files.
 - `dev` task starts the whole development workflow
   - Repl should automatically include cljx and cljs middlewares
   - [Browser repl](https://github.com/adzerk/boot-cljs-repl) included
   - No need to change `index.html`, resulting *unified* JS can be loaded like `:advanced` compiled.
   - Watches for file changes
     - \*.cljx changes trigger [cljx](https://github.com/Deraen/boot-cljx) compilation
-    - \*.less changes trigger [less](https://github.com/Deraen/boot-less) compilation
+    - \*.less changes trigger less compilation
     - \*.cljx changes trigger [cljs](https://github.com/adzerk/boot-cljs) compilation
   - [Live-reloading](https://github.com/adzerk/boot-reload)
     - \*.js, \*.css, \*.html changes send notification to browser throught websocket and browser loads the new files
