@@ -10,11 +10,11 @@ For now, this is a example project instead of a lein template.
 - Simple [Compojure](https://github.com/weavejester/compojure) backend
 - Simple [Om](https://github.com/swannodette/om) frontend
 - [Cljx](https://github.com/lynaghk/cljx) to write code targetting both Clojure and ClojureScript
-- [LESS](http://lesscss.org/) to write stylesheets (Disclaimer: boot-less still needs some love to work reliably)
+- [LESS](http://lesscss.org/) to write stylesheets
   - [boot-less](https://github.com/Deraen/boot-less) is able to import files from classpath
   - You can add dependency to e.g. bootstrap from [webjars](https://webjars.org) to
-    your regular dependencies and then add `@import "bootstrap/less/bootstrap.less"`
-    to your `.less` files.
+    your regular dependencies and then use `@import "bootstrap/less/bootstrap.less"`
+    on your `.less` files.
 - `dev` task starts the whole development workflow
   - Repl should automatically include cljx and cljs middlewares
   - [Browser repl](https://github.com/adzerk/boot-cljs-repl) included

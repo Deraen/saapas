@@ -5,7 +5,7 @@
                   [adzerk/boot-cljs-repl  "0.1.7"]
                   [adzerk/boot-reload     "0.2.1"]
                   [deraen/boot-cljx       "0.2.1"]
-                  [deraen/boot-less       "0.1.1"]
+                  [deraen/boot-less       "0.2.0"]
                   [cljsjs/boot-cljsjs     "0.3.0"]
 
                   [org.clojure/clojure "1.6.0"]
@@ -36,7 +36,8 @@
   aot {:namespace #{'saapas.main}}
   jar {:main 'saapas.main}
   cljs {:output-to "public/main.js"
-        :source-map true})
+        :source-map true}
+  less {:source-map true})
 
 (deftask dev
   "Start the dev env..."
@@ -58,7 +59,7 @@
   []
   (comp
     (from-cljsjs :profile :production)
-    (less)
+    (less :compression true)
     (cljx)
     (cljs :optimizations :advanced)
     (aot)
