@@ -29,6 +29,10 @@ For now, this is a example project instead of a lein template.
   - Cljs will be compiled using `:advanced` optimization
   - Uses minified react.js
 
+## Prerequisites
+
+You should first [install Boot](https://github.com/boot-clj/boot#install).
+
 ## Usage
 
 To start everything run:
