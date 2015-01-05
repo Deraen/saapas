@@ -14,4 +14,4 @@
        (include-css "saapas.css")]
       [:body
        [:div#app.app-wrapper]
-       (include-js "main.js")])))
+       (include-js "js/main.js")])))
