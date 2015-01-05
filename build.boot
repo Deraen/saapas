@@ -1,20 +1,20 @@
 (set-env!
   :source-paths #{"src/cljs" "src/cljx" "src/less"}
   :resource-paths #{"src/clj"}
-  :dependencies '[[adzerk/boot-cljs       "0.0-2411-5"]
+  :dependencies '[[adzerk/boot-cljs       "0.0-2629-1"]
                   [adzerk/boot-cljs-repl  "0.1.7"]
-                  [adzerk/boot-reload     "0.2.1"]
+                  [adzerk/boot-reload     "0.2.3"]
                   [deraen/boot-cljx       "0.2.1"]
                   [deraen/boot-less       "0.2.0"]
-                  [cljsjs/boot-cljsjs     "0.3.0"]
+                  [cljsjs/boot-cljsjs     "0.3.1"]
 
                   [org.clojure/clojure "1.6.0"]
                   [org.clojure/tools.namespace "0.2.8"]
-                  [ring "1.3.1"]
+                  [ring "1.3.2"]
                   [metosin/ring-http-response "0.5.2"]
-                  [compojure "1.2.1"]
-                  [om "0.8.0-beta5" :exclusions [com.facebook/react]]
-                  [cljsjs/react "0.12.2-1"]
+                  [compojure "1.3.1"]
+                  [om "0.8.0-rc1" :exclusions [com.facebook/react]]
+                  [cljsjs/react "0.12.2-2"]
                   [http-kit "2.1.19"]
                   [org.webjars/bootstrap "3.3.1"]])
 
@@ -22,7 +22,7 @@
   '[adzerk.boot-cljs      :refer :all]
   '[adzerk.boot-cljs-repl :refer :all]
   '[adzerk.boot-reload    :refer :all]
-  '[cljsjs.app            :refer :all]
+  '[cljsjs.boot-cljsjs    :refer :all]
   '[deraen.boot-cljx      :refer :all]
   '[deraen.boot-less      :refer :all]
   '[saapas.boot           :refer :all])
