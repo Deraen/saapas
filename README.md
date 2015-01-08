@@ -7,6 +7,10 @@ Inspired by [chestnut](https://github.com/plexus/chestnut).
 
 For now, this is a example project instead of a lein template.
 
+### Prerequisites
+
+You should first [install Boot](https://github.com/boot-clj/boot#install).
+
 ## Features
 
 - Simple [Compojure](https://github.com/weavejester/compojure) backend
@@ -30,10 +34,6 @@ For now, this is a example project instead of a lein template.
 - `package` task creates uberjar
   - Cljs will be compiled using `:advanced` optimization
   - Uses minified react.js
-
-## Prerequisites
-
-You should first [install Boot](https://github.com/boot-clj/boot#install).
 
 ## Usage
 
