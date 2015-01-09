@@ -41,7 +41,7 @@
 
 (deftask dev
   "Start the dev env..."
-  []
+  [s speak bool "Notify when build is done"]
   (comp
     (from-cljsjs)
     (watch)
@@ -52,6 +52,7 @@
     ; This starts a normal repls with piggieback middleware
     (cljs-repl)
     (cljs :optimizations :none :unified-mode true)
+    (if speak (boot.task.built-in/speak) identity)
     (start-app)))
 
 (deftask package
