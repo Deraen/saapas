@@ -7,12 +7,6 @@
     [clojure.java.io :as io]
     [saapas.main :refer :all]))
 
-(deftask start-app
-  "Start the ring app"
-  []
-  (let [done (atom false)]
-    (with-post-wrap fileset
-      (when-not @done
-        (go)
-        (reset! done true))
-      fileset)))
+(deftask start-app []
+  (let [f (delay (go))]
+    (with-post-wrap fileset @f fileset)))
