@@ -22,6 +22,7 @@ You should first [install Boot](https://github.com/boot-clj/boot#install).
     your regular dependencies and then use `@import "bootstrap/less/bootstrap.less"`
     on your `.less` files.
 - `dev` task starts the whole development workflow
+  - `-s` or `--speak` option will enable sound notifications
   - Repl should automatically include cljx and cljs middlewares
   - [Browser repl](https://github.com/adzerk/boot-cljs-repl) included
   - No need to change `index.html`, resulting *unified* JS can be loaded like `:advanced` compiled.
