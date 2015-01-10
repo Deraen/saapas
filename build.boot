@@ -13,6 +13,7 @@
                   [http-kit "2.1.19"]
                   [org.clojure/tools.namespace "0.2.8"]
                   [metosin/ring-http-response "0.5.2"]
+                  [ring/ring-devel "1.3.2"]
                   [compojure "1.3.1"]
                   [hiccup "1.0.5"]
 
@@ -47,8 +48,9 @@
 
 (deftask dev
   "Start the dev env..."
-  [s speak      bool "Notify when build is done"
-   p port  PORT int  "Port for web server"]
+  [s speak           bool "Notify when build is done"
+   r clj-reload      bool "Use r.m.reload to reload changed clj namespaces on each request"
+   p port       PORT int  "Port for web server"]
   (comp
     (from-cljsjs)
     (watch)
@@ -60,7 +62,7 @@
     (cljs-repl)
     (cljs :optimizations :none :unified-mode true)
     (if speak (boot.task.built-in/speak) identity)
-    (start-app :port port)))
+    (start-app :port port :reload clj-reload)))
 
 (deftask package
   "Build the package"

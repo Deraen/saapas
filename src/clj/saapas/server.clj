@@ -5,6 +5,7 @@
             [compojure.handler :refer [api]]
             [ring.util.response :refer [redirect]]
             [ring.util.http-response :refer :all]
+            [ring.middleware.reload :refer [wrap-reload]]
             [org.httpkit.server :refer [run-server]]
             [saapas.index :refer [index-page]]))
 
@@ -24,8 +25,10 @@
   {})
 
 (defn start
-  [ctx & [{:keys [port]}]]
-  (let [port (Integer. (or port 10555))
-        http-kit (run-server #'saapas.server/routes {:port port :join? false})]
+  [ctx & [{:keys [port reload reload-dirs]}]]
+  (let [handler (cond-> #'saapas.server/routes
+                  reload (wrap-reload {:dirs (seq reload-dirs)}))
+        port (Integer. (or port 10555))
+        http-kit (run-server handler {:port port :join? false})]
     (println "Starting web server on port" port)
     {:http-kit http-kit}))

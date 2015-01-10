@@ -8,8 +8,11 @@
     [saapas.main :refer :all]))
 
 (deftask start-app
-  [p port PORT int "Port"]
+  [p port   PORT int  "Port"
+   r reload      bool "Add reload mw"]
   (let [f (delay
-            (reset! opts {:port port})
+            (reset! opts {:port port
+                          :reload reload
+                          :reload-dirs (get-env :directories)})
             (go))]
     (with-post-wrap fileset @f fileset)))
