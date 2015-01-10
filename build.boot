@@ -8,14 +8,20 @@
                   [deraen/boot-less       "0.2.0"      :scope "test"]
                   [cljsjs/boot-cljsjs     "0.4.0"      :scope "test"]
 
+                  ; Backend
                   [org.clojure/clojure "1.6.0"]
+                  [http-kit "2.1.19"]
                   [org.clojure/tools.namespace "0.2.8"]
-                  [ring "1.3.2"]
                   [metosin/ring-http-response "0.5.2"]
                   [compojure "1.3.1"]
+                  [hiccup "1.0.5"]
+
+                  ; Frontend
                   [om "0.8.0-rc1" :exclusions [com.facebook/react]]
+                  [prismatic/om-tools "0.3.10"]
+                  [sablono "0.2.22"]
+
                   [cljsjs/react "0.12.2-3"]
-                  [http-kit "2.1.19"]
                   [org.webjars/bootstrap "3.3.1"]])
 
 (require
@@ -47,7 +53,7 @@
     (from-cljsjs)
     (watch)
     ; Should be before cljs so the generated code is picked up
-    (reload :on-jsload 'saapas.core/main)
+    (reload :on-jsload 'saapas.core/start!)
     (less)
     (cljx)
     ; This starts a normal repls with piggieback middleware

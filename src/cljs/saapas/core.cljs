@@ -1,30 +1,22 @@
 (ns saapas.core
   (:require [om.core :as om :include-macros true]
-            [om.dom :as dom :include-macros true]))
+            [om-tools.core :refer-macros [defcomponentk]]
+            [sablono.core :as html :refer-macros [html]]))
 
 (defonce app-state (atom {:y 2014}))
 
-(defn main []
-  (js/console.log "Starting the app")
-  (om/root
-    (fn [app owner]
-      (reify
-        om/IRender
-        (render [_]
-          (dom/div nil
-            (dom/h1 nil
-              "Hello World! " (:y app))
-            (dom/button
-              #js
-              {:className "btn btn-danger"
-               :onClick (fn [_] (om/transact! app :y (partial + 5)))}
-              "+")
-            (dom/button
-              #js
-              {:className "btn btn-primary"
-               :onClick (fn [_] (om/transact! app :y dec))}
-              "-")))))
-    app-state
-    {:target (. js/document (getElementById "app"))}))
+(defcomponentk main
+  [[:data y :as cursor]]
+  (render [_]
+    (html
+      [:div
+       [:h1 "Hello World! " y]
+       [:div.btn-toolbar
+        [:button.btn.btn-danger {:type "button" :on-click #(om/transact! cursor :y (partial + 5))} "+"]
+        [:button.btn.btn-success {:type "button" :on-click #(om/transact! cursor :y dec)} "-"]]])))
 
-(main)
+(defn start! []
+  (js/console.log "Starting the app")
+  (om/root main app-state {:target (. js/document (getElementById "app"))}))
+
+(start!)
