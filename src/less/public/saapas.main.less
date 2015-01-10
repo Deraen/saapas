@@ -1,7 +1,22 @@
-@import "test.less";
 @import "bootstrap/less/bootstrap.less";
 
-@color: blue;
-body {
-  background: @color;
+footer { padding-top: 40px; }
+
+.links {
+  padding: 0;
+  li {
+    list-style: none;
+    & > span, & > a { margin-right: 10px; }
+  }
+}
+
+.vote {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.caret-up {
+  .caret;
+  border-top: none;
+  border-bottom: @caret-width-base solid;
 }

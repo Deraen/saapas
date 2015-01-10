@@ -1,20 +1,38 @@
 (ns saapas.server
   (:require [clojure.java.io :as io]
-            [compojure.core :refer [GET defroutes]]
+            [schema.core :as s]
+            [compojure.api.sweet :refer :all]
             [compojure.route :refer [resources]]
-            [compojure.handler :refer [api]]
-            [ring.util.response :refer [redirect]]
             [ring.util.http-response :refer :all]
             [org.httpkit.server :refer [run-server]]
-            [saapas.index :refer [index-page]]))
+            [saapas.index :refer [index-page]]
+            [saapas.domain :as domain]
+            [saapas.service :as service]))
 
-(defroutes routes
+(defapi app
+  (swagger-ui "/api-docs")
+  (swagger-docs
+    :title "foobar")
+
   (resources "/" {:root "public"})
-  ; FIXME: boot-cljs will provide reverse routing fn which we
-  ; can use to generate proper urls
+  ; FIXME: boot rc6 should make these unnecessary
   (resources "/public" {:root "public"})
   (resources "/cljsjs" {:root "cljsjs"})
-  (GET "/" []
+
+  (swaggered "links"
+    (context "/api" []
+      (GET* "/links" []
+        :return [domain/Link]
+        (ok (service/find-links)))
+      (POST* "/links" []
+        :return domain/Link
+        :body [body domain/NewLink]
+        (ok (service/insert-link body)))
+      (POST* "/links/:id/vote" []
+        :path-params [id :- s/Int]
+        (ok (service/vote id)))))
+
+  (GET* "/" []
     (ok index-page)))
 
 (defn stop
@@ -26,6 +44,6 @@
 (defn start
   [ctx & [{:keys [port]}]]
   (let [port (Integer. (or port 10555))
-        http-kit (run-server #'saapas.server/routes {:port port :join? false})]
+        http-kit (run-server #'saapas.server/app {:port port :join? false})]
     (println "Starting web server on port" port)
     {:http-kit http-kit}))

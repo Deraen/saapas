@@ -12,14 +12,16 @@
                   [org.clojure/clojure "1.6.0"]
                   [http-kit "2.1.19"]
                   [org.clojure/tools.namespace "0.2.8"]
-                  [metosin/ring-http-response "0.5.2"]
-                  [compojure "1.3.1"]
                   [hiccup "1.0.5"]
+                  [metosin/compojure-api "0.16.6"]
+                  [metosin/ring-swagger-ui "2.0.24"]
+                  [metosin/ring-http-response "0.5.2"]
 
                   ; Frontend
                   [om "0.8.0-rc1" :exclusions [com.facebook/react]]
                   [prismatic/om-tools "0.3.10"]
                   [sablono "0.2.22"]
+                  [cljs-http "0.1.24"]
 
                   [cljsjs/react "0.12.2-3"]
                   [org.webjars/bootstrap "3.3.1"]])
