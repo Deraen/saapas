@@ -16,7 +16,8 @@
   (resources "/public" {:root "public"})
   (resources "/cljsjs" {:root "cljsjs"})
   (GET "/" []
-    (ok index-page)))
+    ; Use (resource-response "index.html") to serve index.html from classpath
+    (-> (ok index-page) (content-type "text/html"))))
 
 (defn stop
   [{:keys [http-kit] :as ctx}]
