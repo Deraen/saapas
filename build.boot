@@ -41,7 +41,8 @@
 
 (deftask dev
   "Start the dev env..."
-  [s speak bool "Notify when build is done"]
+  [s speak      bool "Notify when build is done"
+   p port  PORT int  "Port for web server"]
   (comp
     (from-cljsjs)
     (watch)
@@ -53,7 +54,7 @@
     (cljs-repl)
     (cljs :optimizations :none :unified-mode true)
     (if speak (boot.task.built-in/speak) identity)
-    (start-app)))
+    (start-app :port port)))
 
 (deftask package
   "Build the package"

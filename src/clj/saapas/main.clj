@@ -16,6 +16,7 @@
                        (remove #(.exists (io/file % ".no-reload"))))]
   (apply ns-tools/set-refresh-dirs reload-dirs))
 
+(defonce opts (atom {}))
 (defonce system (atom nil))
 
 (defn init []
@@ -23,7 +24,7 @@
   (swap! system (constantly {})))
 
 (defn start []
-  (swap! system (resolve 'saapas.server/start)))
+  (swap! system (resolve 'saapas.server/start) @opts))
 
 (defn stop []
   (swap! system (resolve 'saapas.server/stop)))

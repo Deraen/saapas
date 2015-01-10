@@ -24,7 +24,7 @@
   {})
 
 (defn start
-  [ctx & [port]]
+  [ctx & [{:keys [port]}]]
   (let [port (Integer. (or port 10555))
         http-kit (run-server #'saapas.server/routes {:port port :join? false})]
     (println "Starting web server on port" port)

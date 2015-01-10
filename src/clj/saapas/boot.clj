@@ -7,6 +7,9 @@
     [clojure.java.io :as io]
     [saapas.main :refer :all]))
 
-(deftask start-app []
-  (let [f (delay (go))]
+(deftask start-app
+  [p port PORT int "Port"]
+  (let [f (delay
+            (reset! opts {:port port})
+            (go))]
     (with-post-wrap fileset @f fileset)))
