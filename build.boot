@@ -1,7 +1,7 @@
 (set-env!
   :source-paths #{"src/cljs" "src/cljx" "src/less"}
   :resource-paths #{"src/clj"}
-  :dependencies '[[adzerk/boot-cljs       "0.0-2629-1" :scope "test"]
+  :dependencies '[[adzerk/boot-cljs       "0.0-2629-4" :scope "test"]
                   [adzerk/boot-cljs-repl  "0.1.7"      :scope "test"]
                   [adzerk/boot-reload     "0.2.3"      :scope "test"]
                   [deraen/boot-cljx       "0.2.1"      :scope "test"]
@@ -13,7 +13,7 @@
                   [http-kit "2.1.19"]
                   [org.clojure/tools.namespace "0.2.8"]
                   [metosin/ring-http-response "0.5.2"]
-                  [ring/ring-devel "1.3.2"]
+                  [ring "1.3.2"]
                   [compojure "1.3.1"]
                   [hiccup "1.0.5"]
 
@@ -38,8 +38,7 @@
   pom {:project 'saapas
        :version "0.1.0-SNAPSHOT"
        :description "Application template for Cljs/Om with live reloading, using Boot."
-       :license {:name "The MIT License (MIT)"
-                 :url "http://opensource.org/licenses/mit-license.php"}}
+       :license {"The MIT License (MIT)" "http://opensource.org/licenses/mit-license.php"}}
   aot {:namespace #{'saapas.main}}
   jar {:main 'saapas.main}
   cljs {:output-to "public/main.js"
@@ -53,6 +52,7 @@
    p port       PORT int  "Port for web server"]
   (comp
     (from-cljsjs)
+    (sift :move {#"^cljsjs" "public/cljsjs"})
     (watch)
     ; Should be before cljs so the generated code is picked up
     (reload :on-jsload 'saapas.core/start!)
@@ -69,6 +69,7 @@
   []
   (comp
     (from-cljsjs :profile :production)
+    (sift :move {#"^cljsjs" "public/cljsjs"})
     (less :compression true)
     (cljx)
     (cljs :optimizations :advanced)

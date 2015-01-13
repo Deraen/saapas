@@ -11,10 +11,7 @@
 
 (defroutes routes
   (resources "/" {:root "public"})
-  ; FIXME: boot-cljs will provide reverse routing fn which we
-  ; can use to generate proper urls
-  (resources "/public" {:root "public"})
-  (resources "/cljsjs" {:root "cljsjs"})
+
   (GET "/" []
     ; Use (resource-response "index.html") to serve index.html from classpath
     (-> (ok index-page) (content-type "text/html"))))
