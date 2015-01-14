@@ -9,7 +9,7 @@ For now, this is a example project instead of a lein template.
 
 ### Prerequisites
 
-You should first [install Boot](https://github.com/boot-clj/boot#install).
+You should first [install Boot](https://github.com/boot-clj/boot#install). Also you should be running the latest version (2.0.0-rc6).
 
 ## Features
 
