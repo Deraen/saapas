@@ -11,7 +11,7 @@
 
 (defroutes routes
   (resources "/" {:root "public"})
-  ; Reload is broken again...
+  ; Reload requires this...
   (resources "/public" {:root "public"})
 
   (GET "/" []
