@@ -11,6 +11,8 @@
 
 (defroutes routes
   (resources "/" {:root "public"})
+  ; Reload is broken again...
+  (resources "/public" {:root "public"})
 
   (GET "/" []
     ; Use (resource-response "index.html") to serve index.html from classpath
