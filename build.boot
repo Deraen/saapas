@@ -5,7 +5,7 @@
                   [adzerk/boot-cljs-repl  "0.1.7"      :scope "test"]
                   [adzerk/boot-reload     "0.2.3"      :scope "test"]
                   [deraen/boot-cljx       "0.2.1"      :scope "test"]
-                  [deraen/boot-less       "0.2.0"      :scope "test"]
+                  [deraen/boot-less       "0.2.1"      :scope "test"]
                   [cljsjs/boot-cljsjs     "0.4.0"      :scope "test"]
 
                   ; Backend
