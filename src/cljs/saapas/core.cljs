@@ -1,4 +1,5 @@
 (ns saapas.core
+  (:require-macros [saapas.macro :refer [foobar]])
   (:require [om.core :as om :include-macros true]
             [om-tools.core :refer-macros [defcomponentk]]
             [sablono.core :as html :refer-macros [html]]))
@@ -20,3 +21,6 @@
   (om/root main app-state {:target (. js/document (getElementById "app"))}))
 
 (start!)
+
+; Macro test
+(foobar :abc 3)
