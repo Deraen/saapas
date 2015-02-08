@@ -38,8 +38,7 @@
        :license {"The MIT License (MIT)" "http://opensource.org/licenses/mit-license.php"}}
   aot {:namespace #{'saapas.main}}
   jar {:main 'saapas.main}
-  cljs {:output-to "public/main.js"
-        :source-map true}
+  cljs {:source-map true}
   less {:source-map true})
 
 (deftask dev
