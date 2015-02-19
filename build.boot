@@ -1,8 +1,8 @@
 (set-env!
   :source-paths #{"src/cljs" "src/cljx" "src/less"}
   :resource-paths #{"src/clj"}
-  :dependencies '[[adzerk/boot-cljs       "0.0-2760-0" :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.1.8"      :scope "test"]
+  :dependencies '[[adzerk/boot-cljs       "0.0-2814-1" :scope "test"]
+                  [adzerk/boot-cljs-repl  "0.1.9"      :scope "test"]
                   [adzerk/boot-reload     "0.2.4"      :scope "test"]
                   [deraen/boot-cljx       "0.2.2"      :scope "test"]
                   [deraen/boot-less       "0.2.1"      :scope "test"]
@@ -13,13 +13,13 @@
                   [org.clojure/tools.namespace "0.2.9"]
                   [metosin/ring-http-response "0.5.2"]
                   [ring "1.3.2"]
-                  [compojure "1.3.1"]
+                  [compojure "1.3.2"]
                   [hiccup "1.0.5"]
 
                   ; Frontend
                   [org.omcljs/om "0.8.8"]
                   [prismatic/om-tools "0.3.10"]
-                  [sablono "0.3.1"]
+                  [sablono "0.3.4"]
 
                   [org.webjars/bootstrap "3.3.2"]])
 
