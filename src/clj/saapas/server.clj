@@ -10,9 +10,8 @@
             [saapas.index :refer [index-page]]))
 
 (defroutes routes
-  (resources "/" {:root "public"})
-  ; Reload requires this...
-  (resources "/public" {:root "public"})
+  (resources "/js" {:root "js"})
+  (resources "/css" {:root "css"})
 
   (GET "/" []
     ; Use (resource-response "index.html") to serve index.html from classpath
