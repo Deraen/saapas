@@ -39,7 +39,13 @@
   aot {:namespace #{'saapas.main}}
   jar {:main 'saapas.main}
   cljs {:source-map true}
-  less {:source-map true})
+  less {:source-map true}
+  repl {:init-ns 'user})
+
+(deftask dev-profile
+  []
+  (merge-env! :source-paths #{"dev-src"})
+  identity)
 
 (deftask dev
   "Start the dev env..."
@@ -47,6 +53,7 @@
    r clj-reload      bool "Use r.m.reload to reload changed clj namespaces on each request"
    p port       PORT int  "Port for web server"]
   (comp
+    (dev-profile)
     (watch)
     ; Should be before cljs so the generated code is picked up
     (reload :on-jsload 'saapas.core/start!)
