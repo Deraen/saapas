@@ -29,7 +29,7 @@ You should first [install Boot](https://github.com/boot-clj/boot#install). Also 
   - Watches for file changes
     - \*.cljx changes trigger [cljx](https://github.com/Deraen/boot-cljx) compilation
     - \*.less changes trigger less compilation
-    - \*.cljx changes trigger [cljs](https://github.com/adzerk/boot-cljs) compilation
+    - \*.cljs changes trigger [cljs](https://github.com/adzerk/boot-cljs) compilation
   - [Live-reloading](https://github.com/adzerk/boot-reload)
     - \*.js, \*.css, \*.html changes send notification to browser throught websocket and browser loads the new files
 - `package` task creates uberjar
