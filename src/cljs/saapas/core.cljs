@@ -12,7 +12,7 @@
   (render [_]
     (html
       [:div
-       [:h1 "Hello World! " y]
+       [:h1 (foo-cljc y)]
        [:div.btn-toolbar
         [:button.btn.btn-danger {:type "button" :on-click #(om/transact! cursor :y (partial + 5))} "+"]
         [:button.btn.btn-success {:type "button" :on-click #(om/transact! cursor :y dec)} "-"]]])))
