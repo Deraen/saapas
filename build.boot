@@ -1,33 +1,36 @@
 (set-env!
-  :source-paths #{"src/cljs" "src/cljx" "src/less"}
-  :resource-paths #{"src/clj"}
-  :dependencies '[[adzerk/boot-cljs       "0.0-2814-1" :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.1.9"      :scope "test"]
-                  [adzerk/boot-reload     "0.2.4"      :scope "test"]
-                  [deraen/boot-cljx       "0.2.2"      :scope "test"]
-                  [deraen/boot-less       "0.2.1"      :scope "test"]
+  :source-paths #{"src/cljs" "src/less"}
+  :resource-paths #{"src/clj" "src/cljc"}
+  :dependencies '[
+                  ; [adzerk/boot-cljs       "0.0-2814-3" :scope "test"]
+                  [adzerk/boot-cljs       "0.0-3269-0" :scope "test"]
+                  ; [adzerk/boot-cljs-repl  "0.1.9"      :scope "test"]
+                  [adzerk/boot-reload     "0.2.6"      :scope "test"]
+                  [deraen/boot-cljx       "0.3.0"      :scope "test"]
+                  [deraen/boot-less       "0.3.0"      :scope "test"]
 
                   ; Backend
-                  [org.clojure/clojure "1.6.0"]
+                  [org.clojure/clojure "1.7.0-beta3"]
                   [http-kit "2.1.19"]
-                  [org.clojure/tools.namespace "0.2.9"]
-                  [metosin/ring-http-response "0.5.2"]
+                  [org.clojure/tools.namespace "0.2.10"]
+                  [metosin/ring-http-response "0.6.1"]
+                  [prismatic/om-tools "0.3.11"]
+                  [prismatic/plumbing "0.4.3"]
+                  [prismatic/schema "0.4.2"]
                   [ring "1.3.2"]
-                  [compojure "1.3.2"]
+                  [compojure "1.3.4"]
                   [hiccup "1.0.5"]
 
                   ; Frontend
                   [org.omcljs/om "0.8.8"]
-                  [prismatic/om-tools "0.3.10"]
                   [sablono "0.3.4"]
 
-                  [org.webjars/bootstrap "3.3.2"]])
+                  [org.webjars/bootstrap "3.3.4"]])
 
 (require
   '[adzerk.boot-cljs      :refer :all]
-  '[adzerk.boot-cljs-repl :refer :all]
+  ; '[adzerk.boot-cljs-repl :refer :all]
   '[adzerk.boot-reload    :refer :all]
-  '[deraen.boot-cljx      :refer :all]
   '[deraen.boot-less      :refer :all]
   '[saapas.boot           :refer :all])
 
@@ -51,10 +54,12 @@
     ; Should be before cljs so the generated code is picked up
     (reload :on-jsload 'saapas.core/start!)
     (less)
-    (cljx)
     ; This starts a normal repls with piggieback middleware
-    (cljs-repl)
-    (cljs :optimizations :none :unified-mode true)
+    ; (cljs-repl)
+    (repl :server true)
+    (cljs :optimizations :none
+          ; :compiler-options {:verbose true}
+          )
     (if speak (boot.task.built-in/speak) identity)
     (start-app :port port :reload clj-reload)))
 
@@ -63,7 +68,6 @@
   []
   (comp
     (less :compression true)
-    (cljx)
     (cljs :optimizations :advanced)
     (aot)
     (pom)

@@ -2,7 +2,8 @@
   (:require-macros [saapas.macro :refer [foobar]])
   (:require [om.core :as om :include-macros true]
             [om-tools.core :refer-macros [defcomponentk]]
-            [sablono.core :as html :refer-macros [html]]))
+            [sablono.core :as html :refer-macros [html]]
+            [saapas.hello :refer [foo-cljc]]))
 
 (defonce app-state (atom {:y 2014}))
 

@@ -29,5 +29,5 @@
                   reload (wrap-reload {:dirs (seq reload-dirs)}))
         port (Integer. (or port 10555))
         http-kit (run-server handler {:port port :join? false})]
-    (println "Starting web server on port" port)
+    (println (str "Starting web server on http://localhost:" port))
     {:http-kit http-kit}))
