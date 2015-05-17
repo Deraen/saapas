@@ -1,1 +1,3 @@
-console.log("hello world local js");
+function foo() {
+  console.log("hello world local js");
+}

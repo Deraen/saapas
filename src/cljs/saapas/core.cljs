@@ -6,6 +6,8 @@
             [saapas.hello :refer [foo-cljc]]
             [foo.bar]))
 
+(js/foo)
+
 (defonce app-state (atom {:y 2014}))
 
 (defcomponentk main
