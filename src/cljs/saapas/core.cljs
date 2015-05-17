@@ -3,7 +3,8 @@
   (:require [om.core :as om :include-macros true]
             [om-tools.core :refer-macros [defcomponentk]]
             [sablono.core :as html :refer-macros [html]]
-            [saapas.hello :refer [foo-cljc]]))
+            [saapas.hello :refer [foo-cljc]]
+            [foo.bar]))
 
 (defonce app-state (atom {:y 2014}))
 
