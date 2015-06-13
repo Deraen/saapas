@@ -1,22 +1,18 @@
 (set-env!
   :source-paths #{"src/cljs" "src/less"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[
-                  ; [adzerk/boot-cljs       "0.0-2814-3" :scope "test"]
-                  [adzerk/boot-cljs       "0.0-3269-0" :scope "test"]
-                  ; [adzerk/boot-cljs-repl  "0.1.9"      :scope "test"]
-                  [adzerk/boot-reload     "0.2.6"      :scope "test"]
-                  [deraen/boot-cljx       "0.3.0"      :scope "test"]
-                  [deraen/boot-less       "0.3.0"      :scope "test"]
+  :dependencies '[[adzerk/boot-cljs       "0.0-3269-2" :scope "test"]
+                  [adzerk/boot-cljs-repl  "0.2.0-SNAPSHOT" :scope "test"]
+                  [adzerk/boot-reload     "0.3.0"      :scope "test"]
+                  [deraen/boot-less       "0.4.0"      :scope "test"]
 
                   ; Backend
-                  [org.clojure/clojure "1.7.0-beta3"]
                   [http-kit "2.1.19"]
                   [org.clojure/tools.namespace "0.2.10"]
-                  [metosin/ring-http-response "0.6.1"]
+                  [metosin/ring-http-response "0.6.2"]
                   [prismatic/om-tools "0.3.11"]
-                  [prismatic/plumbing "0.4.3"]
-                  [prismatic/schema "0.4.2"]
+                  [prismatic/plumbing "0.4.4"]
+                  [prismatic/schema "0.4.3"]
                   [ring "1.3.2"]
                   [compojure "1.3.4"]
                   [hiccup "1.0.5"]
@@ -57,9 +53,7 @@
     ; This starts a normal repls with piggieback middleware
     ; (cljs-repl)
     (repl :server true)
-    (cljs :optimizations :none
-          ; :compiler-options {:verbose true}
-          )
+    (cljs :optimizations :none)
     (if speak (boot.task.built-in/speak) identity)
     (start-app :port port :reload clj-reload)))
 
