@@ -1,15 +1,17 @@
 (set-env!
   :source-paths #{"src/cljs" "src/less"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[[adzerk/boot-cljs       "0.0-3269-2" :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.2.0-SNAPSHOT" :scope "test"]
-                  [adzerk/boot-reload     "0.3.0"      :scope "test"]
+  :dependencies '[[org.clojure/clojure    "1.7.0"]
+                  [org.clojure/clojurescript "0.0-3308"]
+                  [adzerk/boot-cljs       "0.0-3308-0" :scope "test"]
+                  [adzerk/boot-cljs-repl  "0.1.10-SNAPSHOT" :scope "test"]
+                  [adzerk/boot-reload     "0.3.1"      :scope "test"]
                   [deraen/boot-less       "0.4.0"      :scope "test"]
 
                   ; Backend
                   [http-kit "2.1.19"]
                   [org.clojure/tools.namespace "0.2.10"]
-                  [metosin/ring-http-response "0.6.2"]
+                  [metosin/ring-http-response "0.6.3"]
                   [prismatic/om-tools "0.3.11"]
                   [prismatic/plumbing "0.4.4"]
                   [prismatic/schema "0.4.3"]
@@ -24,11 +26,11 @@
                   [org.webjars/bootstrap "3.3.4"]])
 
 (require
-  '[adzerk.boot-cljs      :refer :all]
-  ; '[adzerk.boot-cljs-repl :refer :all]
-  '[adzerk.boot-reload    :refer :all]
-  '[deraen.boot-less      :refer :all]
-  '[saapas.boot           :refer :all])
+  '[adzerk.boot-cljs      :refer [cljs]]
+  '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl repl-env]]
+  '[adzerk.boot-reload    :refer [reload]]
+  '[deraen.boot-less      :refer [less]]
+  '[saapas.boot           :refer [start-app]])
 
 (task-options!
   pom {:project 'saapas
@@ -48,11 +50,11 @@
   (comp
     (watch)
     ; Should be before cljs so the generated code is picked up
+    ; FIXME: Shouldn't matter, file is created in pre-wrap?
     (reload :on-jsload 'saapas.core/start!)
     (less)
     ; This starts a normal repls with piggieback middleware
-    ; (cljs-repl)
-    (repl :server true)
+    (cljs-repl)
     (cljs :optimizations :none)
     (if speak (boot.task.built-in/speak) identity)
     (start-app :port port :reload clj-reload)))
