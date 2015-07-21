@@ -7,10 +7,13 @@
                   [adzerk/boot-cljs-repl  "0.1.10-SNAPSHOT" :scope "test"]
                   [adzerk/boot-reload     "0.3.1"      :scope "test"]
                   [deraen/boot-less       "0.4.0"      :scope "test"]
+                  [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
                   ; Backend
                   [http-kit "2.1.19"]
                   [org.clojure/tools.namespace "0.2.10"]
+                  [reloaded.repl "0.1.0"]
+                  [com.stuartsierra/component "0.2.3"]
                   [metosin/ring-http-response "0.6.3"]
                   [prismatic/om-tools "0.3.11"]
                   [prismatic/plumbing "0.4.4"]
@@ -30,7 +33,12 @@
   '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl repl-env]]
   '[adzerk.boot-reload    :refer [reload]]
   '[deraen.boot-less      :refer [less]]
-  '[saapas.boot           :refer [start-app]])
+  '[deraen.boot-ctn       :refer [init-ctn!]]
+  '[saapas.boot           :refer [start-app]]
+  '[reloaded.repl         :refer [go reset start stop system]])
+
+; Watch boot temp dirs
+(init-ctn!)
 
 (task-options!
   pom {:project 'saapas
