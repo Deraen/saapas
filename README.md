@@ -28,14 +28,12 @@ latest version.
     on your `.less` files.
 - `dev` task starts the whole development workflow
   - Check `boot dev --help` for options
-  - Repl should automatically include cljs middlewares
   - [Browser repl][boot-cljs-repl] included
-  - No need to change `index.html`, resulting *unified* JS can be loaded like `:advanced` compiled.
   - Watches for file changes
     - \*.less changes trigger less compilation
     - \*.cljs changes trigger [cljs][boot-cljs] compilation
   - [Live-reloading][boot-reload]
-    - \*.js, \*.css, \*.html changes send notification to browser throught websocket and browser loads the new files
+    - \*.js, \*.css, \*.html changes send notification to browser thought WebSocket and browser loads the new files
 - `package` task creates uberjar
   - Cljs will be compiled using `:advanced` optimization
   - Uses minified react.js
