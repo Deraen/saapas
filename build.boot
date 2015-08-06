@@ -34,7 +34,7 @@
   '[adzerk.boot-reload    :refer [reload]]
   '[deraen.boot-less      :refer [less]]
   '[deraen.boot-ctn       :refer [init-ctn!]]
-  '[saapas.boot           :refer [start-app]]
+  '[backend.boot          :refer [start-app]]
   '[reloaded.repl         :refer [go reset start stop system]])
 
 ; Watch boot temp dirs
@@ -45,8 +45,8 @@
        :version "0.1.0-SNAPSHOT"
        :description "Application template for Cljs/Om with live reloading, using Boot."
        :license {"The MIT License (MIT)" "http://opensource.org/licenses/mit-license.php"}}
-  aot {:namespace #{'saapas.main}}
-  jar {:main 'saapas.main}
+  aot {:namespace #{'backend.main}}
+  jar {:main 'backend.main}
   cljs {:source-map true}
   less {:source-map true})
 
@@ -59,7 +59,7 @@
     (watch)
     ; Should be before cljs so the generated code is picked up
     ; FIXME: Shouldn't matter, file is created in pre-wrap?
-    (reload :on-jsload 'saapas.core/start!)
+    (reload :on-jsload 'frontend.core/start!)
     (less)
     ; This starts a normal repls with piggieback middleware
     (cljs-repl)

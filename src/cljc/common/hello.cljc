@@ -1,4 +1,4 @@
-(ns saapas.hello)
+(ns common.hello)
 
 (defn foo-cljc [x]
   "I don't do a whole lot."

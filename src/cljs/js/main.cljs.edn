@@ -1,2 +1,2 @@
-{:require [saapas.core]
- :init-fns [saapas.core/start!]}
+{:require [frontend.core]
+ :init-fns [frontend.core/start!]}

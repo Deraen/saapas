@@ -1,8 +1,8 @@
-(ns saapas.boot
+(ns backend.boot
   {:boot/export-tasks true}
   (:require [boot.core :refer :all]
             [reloaded.repl :refer [go]]
-            [saapas.main :refer :all]))
+            [backend.main :refer :all]))
 
 (deftask start-app
   [p port   PORT int  "Port"

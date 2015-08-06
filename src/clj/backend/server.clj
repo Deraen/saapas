@@ -1,4 +1,4 @@
-(ns saapas.server
+(ns backend.server
   (:require [clojure.java.io :as io]
             [com.stuartsierra.component :as component]
             [compojure.core :refer [GET defroutes]]
@@ -8,7 +8,7 @@
             [ring.util.http-response :refer :all]
             [ring.middleware.reload :refer [wrap-reload]]
             [org.httpkit.server :refer [run-server]]
-            [saapas.index :refer [index-page]]))
+            [backend.index :refer [index-page]]))
 
 (defroutes routes
   (resources "/js" {:root "js"})
@@ -24,7 +24,7 @@
     (let [port (or port 10555)]
       (println (str "Starting web server on http://localhost:" port))
       (assoc this :http-kit (run-server (cond->
-                                          #'saapas.server/routes
+                                          #'backend.server/routes
                                           reload (wrap-reload {:dirs (seq reload-dirs)}))
                                         {:port port :join? false}))))
   (stop [this]

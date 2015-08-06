@@ -1,9 +1,9 @@
-(ns saapas.core
-  (:require-macros [saapas.macro :refer [foobar]])
+(ns frontend.core
+  (:require-macros [frontend.macro :refer [foobar]])
   (:require [om.core :as om :include-macros true]
             [om-tools.core :refer-macros [defcomponentk]]
             [sablono.core :as html :refer-macros [html]]
-            [saapas.hello :refer [foo-cljc]]
+            [common.hello :refer [foo-cljc]]
             [foo.bar]))
 
 (js/foo)
