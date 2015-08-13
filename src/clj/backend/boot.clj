@@ -7,9 +7,13 @@
 (deftask start-app
   [p port   PORT int  "Port"
    r reload      bool "Add reload mw"]
-  (let [f (delay
-            (setup-app! {:port port
-                        :reload reload
-                        :reload-dirs (get-env :directories)})
-            (go))]
-    (with-post-wrap fileset @f fileset)))
+  (let [x (atom nil)]
+    (with-post-wrap fileset
+      (swap! x (fn [x]
+                  (if x
+                    x
+                    (do (setup-app! {:port port
+                                     :reload reload
+                                     :reload-dirs (get-env :directories)})
+                        (go)))))
+      fileset)))
