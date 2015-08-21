@@ -2,11 +2,11 @@
   :source-paths #{"src/cljs" "src/less"}
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.7.0"]
-                  [org.clojure/clojurescript "0.0-3308"]
-                  [adzerk/boot-cljs       "0.0-3308-0" :scope "test"]
+                  [org.clojure/clojurescript "1.7.48"]
+                  [adzerk/boot-cljs       "1.7.48"     :scope "test"]
                   [adzerk/boot-cljs-repl  "0.1.10-SNAPSHOT" :scope "test"]
                   [adzerk/boot-reload     "0.3.1"      :scope "test"]
-                  [deraen/boot-less       "0.4.0"      :scope "test"]
+                  [deraen/boot-less       "0.4.1"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
                   ; Backend
