@@ -3,9 +3,9 @@
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.7.0"]
                   [org.clojure/clojurescript "1.7.48"]
-                  [adzerk/boot-cljs       "1.7.48-3"   :scope "test"]
+                  [adzerk/boot-cljs       "1.7.48-4"   :scope "test"]
                   [adzerk/boot-cljs-repl  "0.1.10-SNAPSHOT" :scope "test"]
-                  [adzerk/boot-reload     "0.3.1"      :scope "test"]
+                  [adzerk/boot-reload     "0.3.2"      :scope "test"]
                   [deraen/boot-less       "0.4.1"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
@@ -63,7 +63,7 @@
     (less)
     ; This starts a normal repls with piggieback middleware
     (cljs-repl)
-    (cljs :optimizations :none :compiler-options {:asset-path "js/main.out"})
+    (cljs)
     (if speak (boot.task.built-in/speak) identity)
     (start-app :port port :reload clj-reload)))
 
