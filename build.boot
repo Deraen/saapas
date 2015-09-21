@@ -57,11 +57,9 @@
    p port       PORT int  "Port for web server"]
   (comp
     (watch)
-    ; Should be before cljs so the generated code is picked up
-    ; FIXME: Shouldn't matter, file is created in pre-wrap?
-    (reload :on-jsload 'frontend.core/start!)
     (less)
-    ; This starts a normal repls with piggieback middleware
+    (reload :on-jsload 'frontend.core/start!)
+    ; This starts a repl server with piggieback middleware
     (cljs-repl)
     (cljs)
     (if speak (boot.task.built-in/speak) identity)
