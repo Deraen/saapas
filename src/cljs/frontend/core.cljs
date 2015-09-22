@@ -11,7 +11,7 @@
 
 (defonce app-state (atom {:y 2014}))
 
-; Edit cljs_http.client/get and e.g. add js/console.log call
+; Edit cljs_http.client/get and e.g. add js/console.log call and run lein install
 (http/get "/index.html")
 
 (defcomponentk main
