@@ -25,6 +25,7 @@
                   ; Frontend
                   [org.omcljs/om "0.8.8"]
                   [sablono "0.3.4"]
+                  [cljs-http "0.1.38-SNAPSHOT"]
 
                   [org.webjars/bootstrap "3.3.4"]])
 
@@ -57,6 +58,7 @@
    p port       PORT int  "Port for web server"]
   (comp
     (watch)
+    (checkout :dependencies {'cljs-http "0.1.38-SNAPSHOT"})
     (less)
     (reload :on-jsload 'frontend.core/start!)
     ; This starts a repl server with piggieback middleware

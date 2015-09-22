@@ -4,11 +4,15 @@
             [om-tools.core :refer-macros [defcomponentk]]
             [sablono.core :as html :refer-macros [html]]
             [common.hello :refer [foo-cljc]]
-            [foo.bar]))
+            [foo.bar]
+            [cljs-http.client :as http]))
 
 (js/foo)
 
 (defonce app-state (atom {:y 2014}))
+
+; Edit cljs_http.client/get and e.g. add js/console.log call
+(http/get "/index.html")
 
 (defcomponentk main
   [[:data y :as cursor]]
