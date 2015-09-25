@@ -8,7 +8,7 @@
 
 (js/foo)
 
-(defonce app-state (atom {:y 2014}))
+(defonce app-state (atom {:y 2015}))
 
 (defcomponentk main
   [[:data y :as cursor]]
