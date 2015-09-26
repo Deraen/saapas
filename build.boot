@@ -4,7 +4,7 @@
   :dependencies '[[org.clojure/clojure    "1.7.0"]
                   [org.clojure/clojurescript "1.7.48"]
                   [adzerk/boot-cljs       "1.7.48-5-SNAPSHOT" :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.1.10-SNAPSHOT" :scope "test"]
+                  [adzerk/boot-cljs-repl  "0.2.0"      :scope "test"]
                   [adzerk/boot-reload     "0.3.3-SNAPSHOT" :scope "test"]
                   [deraen/boot-less       "0.4.1"      :scope "test"]
                   [deraen/boot-sass       "0.1.0"      :scope "test"]
