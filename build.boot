@@ -7,7 +7,7 @@
                   [adzerk/boot-cljs-repl  "0.1.10-SNAPSHOT" :scope "test"]
                   [adzerk/boot-reload     "0.3.3-SNAPSHOT" :scope "test"]
                   [deraen/boot-less       "0.4.1"      :scope "test"]
-                  [deraen/boot-sass       "0.1.0-SNAPSHOT" :scope "test"]
+                  [deraen/boot-sass       "0.1.0"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
                   ; Backend
