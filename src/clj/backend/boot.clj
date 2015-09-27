@@ -5,15 +5,12 @@
             [backend.main :refer :all]))
 
 (deftask start-app
-  [p port   PORT int  "Port"
-   r reload      bool "Add reload mw"]
+  [p port   PORT int  "Port"]
   (let [x (atom nil)]
-    (with-post-wrap fileset
+    (with-pre-wrap fileset
       (swap! x (fn [x]
                   (if x
                     x
-                    (do (setup-app! {:port port
-                                     :reload reload
-                                     :reload-dirs (get-env :directories)})
+                    (do (setup-app! {:port port})
                         (go)))))
       fileset)))

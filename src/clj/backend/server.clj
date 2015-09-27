@@ -23,9 +23,7 @@
   (start [this]
     (let [port (or port 10555)]
       (println (str "Starting web server on http://localhost:" port))
-      (assoc this :http-kit (run-server (cond->
-                                          #'backend.server/routes
-                                          reload (wrap-reload {:dirs (seq reload-dirs)}))
+      (assoc this :http-kit (run-server #'backend.server/routes
                                         {:port port :join? false}))))
   (stop [this]
     (if-let [http-kit (:http-kit this)]

@@ -58,11 +58,11 @@
 (deftask dev
   "Start the dev env..."
   [s speak           bool "Notify when build is done"
-   r clj-reload      bool "Use r.m.reload to reload changed clj namespaces on each request"
    p port       PORT int  "Port for web server"
-   a use-sass            bool "Use Scss instead of less"]
+   a use-sass        bool "Use Scss instead of less"]
   (comp
     (watch)
+    (start-app :port port)
     (if use-sass
       (sass)
       (less))
@@ -70,8 +70,7 @@
     ; This starts a repl server with piggieback middleware
     (cljs-repl)
     (cljs)
-    (if speak (boot.task.built-in/speak) identity)
-    (start-app :port port :reload clj-reload)))
+    (if speak (boot.task.built-in/speak) identity)))
 
 (deftask package
   "Build the package"
