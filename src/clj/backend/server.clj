@@ -8,7 +8,7 @@
             [ring.util.http-response :refer :all]
             [ring.middleware.reload :refer [wrap-reload]]
             [org.httpkit.server :refer [run-server]]
-            [backend.index :refer [index-page]]))
+            [backend.index :refer [index-page test-page]]))
 
 (defroutes routes
   (resources "/js" {:root "js"})
@@ -16,7 +16,9 @@
 
   (GET "/" []
     ; Use (resource-response "index.html") to serve index.html from classpath
-    (-> (ok index-page) (content-type "text/html"))))
+    (-> (ok index-page) (content-type "text/html")))
+  (GET "/test" []
+    (-> (ok test-page) (content-type "text/html"))))
 
 (defrecord HttpKit [port reload reload-dirs]
   component/Lifecycle

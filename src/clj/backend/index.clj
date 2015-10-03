@@ -15,3 +15,12 @@
       [:body
        [:div.container [:div#app.app-wrapper]]
        (include-js "js/main.js")])))
+
+(def test-page
+  (html
+    (html5
+      [:head
+       [:title "Saapas tests"]]
+      [:body
+       [:div.container [:div#app.app-wrapper]]
+       (include-js "js/test.js")])))
