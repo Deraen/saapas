@@ -62,7 +62,6 @@
    a use-sass        bool "Use Scss instead of less"]
   (comp
     (watch)
-    (start-app :port port)
     (if use-sass
       (sass)
       (less))
@@ -70,6 +69,7 @@
     ; This starts a repl server with piggieback middleware
     (cljs-repl)
     (cljs)
+    (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
 (deftask package
