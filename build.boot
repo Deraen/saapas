@@ -65,10 +65,11 @@
     (if use-sass
       (sass)
       (less))
-    (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s")
+    (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s"
+            :ids #{"js/main"})
     ; This starts a repl server with piggieback middleware
-    (cljs-repl)
-    (cljs)
+    (cljs-repl :ids #{"js/main"})
+    (cljs :ids #{"js/main"})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
