@@ -3,9 +3,9 @@
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.7.0"]
                   [org.clojure/clojurescript "1.7.48"]
-                  [adzerk/boot-cljs       "1.7.48-5-SNAPSHOT" :scope "test"]
+                  [adzerk/boot-cljs       "1.7.48-5"   :scope "test"]
                   [adzerk/boot-cljs-repl  "0.2.0"      :scope "test"]
-                  [adzerk/boot-reload     "0.3.3-SNAPSHOT" :scope "test"]
+                  [adzerk/boot-reload     "0.4.0"      :scope "test"]
                   [deraen/boot-less       "0.4.1"      :scope "test"]
                   [deraen/boot-sass       "0.1.0"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
@@ -65,7 +65,7 @@
     (if use-sass
       (sass)
       (less))
-    (reload :on-jsload 'frontend.core/start! :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s")
+    (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s")
     ; This starts a repl server with piggieback middleware
     (cljs-repl)
     (cljs)
