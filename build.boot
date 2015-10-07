@@ -3,29 +3,30 @@
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.7.0"]
                   [org.clojure/clojurescript "1.7.48"]
+
                   [adzerk/boot-cljs       "1.7.48-5"   :scope "test"]
                   [adzerk/boot-cljs-repl  "0.2.0"      :scope "test"]
                   [adzerk/boot-reload     "0.4.0"      :scope "test"]
-                  [deraen/boot-less       "0.4.1"      :scope "test"]
-                  [deraen/boot-sass       "0.1.0"      :scope "test"]
+                  [deraen/boot-less       "0.4.2"      :scope "test"]
+                  [deraen/boot-sass       "0.1.1"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
                   ; Backend
                   [http-kit "2.1.19"]
-                  [org.clojure/tools.namespace "0.2.10"]
-                  [reloaded.repl "0.1.0"]
-                  [com.stuartsierra/component "0.2.3"]
-                  [metosin/ring-http-response "0.6.3"]
-                  [prismatic/om-tools "0.3.11"]
-                  [prismatic/plumbing "0.4.4"]
-                  [prismatic/schema "0.4.3"]
-                  [ring "1.3.2"]
-                  [compojure "1.3.4"]
+                  [org.clojure/tools.namespace "0.2.11"]
+                  [reloaded.repl "0.2.0"]
+                  [com.stuartsierra/component "0.3.0"]
+                  [metosin/ring-http-response "0.6.5"]
+                  [prismatic/om-tools "0.4.0"]
+                  [prismatic/plumbing "0.5.0"]
+                  [prismatic/schema "1.0.1"]
+                  [ring "1.4.0"]
+                  [compojure "1.4.0"]
                   [hiccup "1.0.5"]
 
                   ; Frontend
                   [org.omcljs/om "0.8.8"]
-                  [sablono "0.3.4"]
+                  [sablono "0.3.6"]
 
                   ; LESS
                   [org.webjars/bootstrap "3.3.4"]
@@ -68,7 +69,7 @@
     (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s"
             :ids #{"js/main"})
     ; This starts a repl server with piggieback middleware
-    (cljs-repl :ids #{"js/main"})
+    (cljs-repl :ids #{"main"})
     (cljs :ids #{"js/main"})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
