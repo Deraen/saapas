@@ -1,16 +1,16 @@
 (ns backend.boot
   {:boot/export-tasks true}
-  (:require [boot.core :refer :all]
+  (:require [boot.core :as b]
             [reloaded.repl :refer [go]]
             [backend.main :refer :all]
             [clojure.tools.namespace.repl :refer [disable-reload!]]))
 
 (disable-reload!)
 
-(deftask start-app
+(b/deftask start-app
   [p port   PORT int  "Port"]
   (let [x (atom nil)]
-    (with-pre-wrap fileset
+    (b/with-pre-wrap fileset
       (swap! x (fn [x]
                   (if x
                     x

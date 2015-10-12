@@ -1,12 +1,16 @@
 (set-env!
-  :source-paths #{"src/cljs" "src/less" "src/scss"}
+  ; Test path can be included here as source-files are not included in JAR
+  ; Just be careful to not AOT them
+  :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj"}
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.7.0"]
                   [org.clojure/clojurescript "1.7.48"]
 
+                  [boot/core              "2.3.0"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.48-5"   :scope "test"]
                   [adzerk/boot-cljs-repl  "0.2.0"      :scope "test"]
                   [adzerk/boot-reload     "0.4.0"      :scope "test"]
+                  [adzerk/boot-test       "1.0.4"      :scope "test"]
                   [deraen/boot-less       "0.4.2"      :scope "test"]
                   [deraen/boot-sass       "0.1.1"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
@@ -37,6 +41,7 @@
   '[adzerk.boot-cljs      :refer [cljs]]
   '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl repl-env]]
   '[adzerk.boot-reload    :refer [reload]]
+  '[adzerk.boot-test      :refer [test]]
   '[deraen.boot-less      :refer [less]]
   '[deraen.boot-sass      :refer [sass]]
   '[deraen.boot-ctn       :refer [init-ctn!]]
@@ -73,6 +78,14 @@
     (cljs :ids #{"js/main"})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
+
+(deftask run-tests []
+  (test))
+
+(deftask autotest []
+  (comp
+    (watch)
+    (run-tests)))
 
 (deftask package
   "Build the package"

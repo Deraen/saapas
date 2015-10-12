@@ -56,13 +56,6 @@ client which connects to the nrepl server started by the dev task by running
 $ boot repl -c
 ```
 
-## TODO
-
-- [x] Less compilation and css livereload
-- [x] Production build (uberjar)
-- [ ] Tests
-  - [boot-test](https://github.com/adzerk/boot-test)
-
 [chestnut]: https://github.com/plexus/chestnut
 [install]: https://github.com/boot-clj/boot#install
 [component]: https://github.com/stuartsierra/component
