@@ -4,10 +4,10 @@
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj"}
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.7.0"]
-                  [org.clojure/clojurescript "1.7.166"]
+                  [org.clojure/clojurescript "1.7.170"]
 
                   [boot/core              "2.3.0"      :scope "test"]
-                  [adzerk/boot-cljs       "1.7.166-1"  :scope "test"]
+                  [adzerk/boot-cljs       "1.7.170-1"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.2.0"      :scope "test"]
                   [adzerk/boot-reload     "0.4.0"      :scope "test"]
                   [adzerk/boot-test       "1.0.4"      :scope "test"]
