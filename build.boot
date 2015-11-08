@@ -7,9 +7,12 @@
                   [org.clojure/clojurescript "1.7.170"]
 
                   [boot/core              "2.3.0"      :scope "test"]
-                  [adzerk/boot-cljs       "1.7.170-1"  :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.2.0"      :scope "test"]
-                  [adzerk/boot-reload     "0.4.0"      :scope "test"]
+                  [adzerk/boot-cljs       "1.7.170-2"  :scope "test"]
+                  [adzerk/boot-cljs-repl  "0.2.1"      :scope "test"]
+                  [com.cemerick/piggieback "0.2.1"     :scope "test"]
+                  [weasel                 "0.7.0"      :scope "test"]
+                  [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
+                  [adzerk/boot-reload     "0.4.2"      :scope "test"]
                   [adzerk/boot-test       "1.0.4"      :scope "test"]
                   [deraen/boot-less       "0.4.2"      :scope "test"]
                   [deraen/boot-sass       "0.1.1"      :scope "test"]
@@ -74,7 +77,7 @@
     (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s"
             :ids #{"js/main"})
     ; This starts a repl server with piggieback middleware
-    (cljs-repl :ids #{"main"})
+    (cljs-repl :ids #{"js/main"})
     (cljs :ids #{"js/main"})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
