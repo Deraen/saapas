@@ -8,7 +8,7 @@
 
                   [boot/core              "2.3.0"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.170-2"  :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.2.1"      :scope "test"]
+                  [adzerk/boot-cljs-repl  "0.3.0"      :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
