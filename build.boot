@@ -13,7 +13,7 @@
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
                   [adzerk/boot-reload     "0.4.2"      :scope "test"]
-                  [adzerk/boot-test       "1.0.4"      :scope "test"]
+                  [adzerk/boot-test       "1.0.6"      :scope "test"]
                   [deraen/boot-less       "0.4.2"      :scope "test"]
                   [deraen/boot-sass       "0.1.1"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
@@ -21,12 +21,12 @@
                   ; Backend
                   [http-kit "2.1.19"]
                   [org.clojure/tools.namespace "0.2.11"]
-                  [reloaded.repl "0.2.0"]
-                  [com.stuartsierra/component "0.3.0"]
+                  [reloaded.repl "0.2.1"]
+                  [com.stuartsierra/component "0.3.1"]
                   [metosin/ring-http-response "0.6.5"]
                   [prismatic/om-tools "0.4.0"]
-                  [prismatic/plumbing "0.5.0"]
-                  [prismatic/schema "1.0.1"]
+                  [prismatic/plumbing "0.5.2"]
+                  [prismatic/schema "1.0.4"]
                   [ring "1.4.0"]
                   [compojure "1.4.0"]
                   [hiccup "1.0.5"]
@@ -36,7 +36,7 @@
                   [sablono "0.3.6"]
 
                   ; LESS
-                  [org.webjars/bootstrap "3.3.4"]
+                  [org.webjars/bootstrap "3.3.6"]
                   ; SASS
                   [org.webjars.bower/bootstrap "4.0.0-alpha" :exclusions [org.webjars.bower/jquery]]])
 
