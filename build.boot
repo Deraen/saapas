@@ -6,7 +6,7 @@
   :dependencies '[[org.clojure/clojure    "1.7.0"]
                   [org.clojure/clojurescript "1.7.170"]
 
-                  [boot/core              "2.3.0"      :scope "test"]
+                  [boot/core              "2.5.2"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.170-3"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.3.0"      :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
