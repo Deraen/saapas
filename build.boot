@@ -14,10 +14,10 @@
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
                   [adzerk/boot-reload     "0.4.2"      :scope "test"]
                   [adzerk/boot-test       "1.0.7"      :scope "test"]
-                  [deraen/boot-less       "0.4.4"      :scope "test"]
+                  [deraen/boot-less       "0.5.0"      :scope "test"]
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.13"     :scope "test"]
-                  [deraen/boot-sass       "0.1.1"      :scope "test"]
+                  [deraen/boot-sass       "0.2.0"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
                   ; Backend
