@@ -1,2 +1,0 @@
-{:require [frontend.tests]
- :compiler-options {:asset-path "js/test.out"}}

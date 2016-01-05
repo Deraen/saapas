@@ -1,7 +1,7 @@
 (set-env!
   ; Test path can be included here as source-files are not included in JAR
   ; Just be careful to not AOT them
-  :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj"}
+  :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.7.0"]
                   [org.clojure/clojurescript "1.7.170"]
@@ -9,6 +9,7 @@
                   [boot/core              "2.5.2"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.170-3"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.3.0"      :scope "test"]
+                  [crisptrutski/boot-cljs-test "0.2.1" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
@@ -50,6 +51,7 @@
   '[deraen.boot-less      :refer [less]]
   '[deraen.boot-sass      :refer [sass]]
   '[deraen.boot-ctn       :refer [init-ctn!]]
+  '[crisptrutski.boot-cljs-test :refer [test-cljs prep-cljs-tests run-cljs-tests]]
   '[backend.boot          :refer [start-app]]
   '[reloaded.repl         :refer [go reset start stop system]])
 
@@ -70,7 +72,8 @@
   "Start the dev env..."
   [s speak           bool "Notify when build is done"
    p port       PORT int  "Port for web server"
-   a use-sass        bool "Use Scss instead of less"]
+   a use-sass        bool "Use Scss instead of less"
+   t test-cljs       bool "Compile and run cljs tests"]
   (comp
     (watch)
     (if use-sass
@@ -82,10 +85,12 @@
     (cljs-repl :ids #{"js/main"})
     (cljs :ids #{"js/main"})
     (start-app :port port)
+    (test-cljs :namespaces #{"frontend.core-test"})
     (if speak (boot.task.built-in/speak) identity)))
 
 (deftask run-tests []
-  (test))
+  (test)
+  (test-cljs :namespaces #{"frontend.core-test"}))
 
 (deftask autotest []
   (comp
