@@ -106,4 +106,5 @@
     (aot)
     (pom)
     (uber)
-    (jar)))
+    (jar)
+    (target)))
