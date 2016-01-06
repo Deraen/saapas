@@ -3,7 +3,7 @@
   (:require [om.core :as om :include-macros true]
             [om-tools.core :refer-macros [defcomponentk]]
             [sablono.core :as html :refer-macros [html]]
-            [common.hello :refer [foo-cljc]]
+            [common.hello :refer [foo-cljc foobar]]
             [foo.bar]))
 
 (js/foo)
