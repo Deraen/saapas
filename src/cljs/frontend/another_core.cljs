@@ -1,4 +1,4 @@
-(ns frontend.core
+(ns frontend.another-core
   (:require-macros [frontend.macro :refer [foobar]])
   (:require [om.core :as om :include-macros true]
             [om-tools.core :refer-macros [defcomponentk]]

@@ -1,3 +1,9 @@
-{:require [frontend.core]
+{; All namespaces that occur in modules need to be required
+ :require [frontend.core frontend.another-core]
  :init-fns [frontend.core/start!]
- :compiler-options {:asset-path "js/main.out"}}
+ :compiler-options {:asset-path "js/main.out"}
+ :modules {:common {:entries #{"frontend.common"}}
+           :core {:entries #{"frontend.core"}
+                  :depends-on #{:common}}
+           :another {:entries #{"frontend.another-core"}
+                     :depends-on #{:common}}}}
