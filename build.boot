@@ -89,8 +89,9 @@
     (if speak (boot.task.built-in/speak) identity)))
 
 (deftask run-tests []
-  (test)
-  (test-cljs :namespaces #{"frontend.core-test"}))
+  (comp
+   (test)
+   (test-cljs :namespaces #{"frontend.core-test"})))
 
 (deftask autotest []
   (comp
