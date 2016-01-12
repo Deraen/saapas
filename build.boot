@@ -4,16 +4,16 @@
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.7.0"]
-                  [org.clojure/clojurescript "1.7.170"]
+                  [org.clojure/clojurescript "1.7.228"]
 
                   [boot/core              "2.5.2"      :scope "test"]
-                  [adzerk/boot-cljs       "1.7.170-3"  :scope "test"]
+                  [adzerk/boot-cljs       "1.7.228-1"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.3.0"      :scope "test"]
                   [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.2"      :scope "test"]
+                  [adzerk/boot-reload     "0.4.4"      :scope "test"]
                   [adzerk/boot-test       "1.0.7"      :scope "test"]
                   [deraen/boot-less       "0.5.0"      :scope "test"]
                   ;; For boot-less
@@ -85,7 +85,6 @@
     (cljs-repl :ids #{"js/main"})
     (cljs :ids #{"js/main"})
     (start-app :port port)
-    (test-cljs :namespaces #{"frontend.core-test"})
     (if speak (boot.task.built-in/speak) identity)))
 
 (deftask run-tests []
