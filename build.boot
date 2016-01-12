@@ -9,7 +9,7 @@
                   [boot/core              "2.5.2"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.170-3"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.3.0"      :scope "test"]
-                  [crisptrutski/boot-cljs-test "0.2.1" :scope "test"]
+                  [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
@@ -89,8 +89,9 @@
     (if speak (boot.task.built-in/speak) identity)))
 
 (deftask run-tests []
-  (test)
-  (test-cljs :namespaces #{"frontend.core-test"}))
+  (comp
+   (test)
+   (test-cljs :namespaces #{"frontend.core-test"})))
 
 (deftask autotest []
   (comp
