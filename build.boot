@@ -13,7 +13,7 @@
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.4"      :scope "test"]
+                  [adzerk/boot-reload     "0.4.5"      :scope "test"]
                   [adzerk/boot-test       "1.0.7"      :scope "test"]
                   [deraen/boot-less       "0.5.0"      :scope "test"]
                   ;; For boot-less
