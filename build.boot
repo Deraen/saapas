@@ -3,22 +3,22 @@
   ; Just be careful to not AOT them
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[[org.clojure/clojure    "1.7.0"]
-                  [org.clojure/clojurescript "1.7.228"]
+  :dependencies '[[org.clojure/clojure    "1.8.0"]
+                  [org.clojure/clojurescript "1.8.51"]
 
-                  [boot/core              "2.5.2"      :scope "test"]
+                  [boot/core              "2.5.5"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.228-1"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.3.0"      :scope "test"]
                   [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.5"      :scope "test"]
-                  [adzerk/boot-test       "1.0.7"      :scope "test"]
+                  [adzerk/boot-reload     "0.4.7"      :scope "test"]
+                  [adzerk/boot-test       "1.1.1"      :scope "test"]
                   [deraen/boot-less       "0.5.0"      :scope "test"]
                   ;; For boot-less
-                  [org.slf4j/slf4j-nop    "1.7.13"     :scope "test"]
-                  [deraen/boot-sass       "0.2.0"      :scope "test"]
+                  [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
+                  [deraen/boot-sass       "0.2.1"      :scope "test"]
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
                   ; Backend
@@ -28,10 +28,10 @@
                   [com.stuartsierra/component "0.3.1"]
                   [metosin/ring-http-response "0.6.5"]
                   [prismatic/om-tools "0.4.0"]
-                  [prismatic/plumbing "0.5.2"]
-                  [prismatic/schema "1.0.4"]
+                  [prismatic/plumbing "0.5.3"]
+                  [prismatic/schema "1.1.1"]
                   [ring "1.4.0"]
-                  [compojure "1.4.0"]
+                  [compojure "1.5.0"]
                   [hiccup "1.0.5"]
 
                   ; Frontend

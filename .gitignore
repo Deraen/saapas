@@ -11,3 +11,4 @@ pom.xml.asc
 /.repl
 .nrepl-history
 /.boot
+.cljs_rhino_repl

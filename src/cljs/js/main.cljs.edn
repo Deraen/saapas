@@ -1,3 +1,4 @@
 {:require [frontend.core]
  :init-fns [frontend.core/start!]
- :compiler-options {:asset-path "js/main.out"}}
+ :compiler-options {:asset-path "js/main.out"
+                    :parallel-build true}}
