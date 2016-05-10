@@ -27,16 +27,12 @@
                   [reloaded.repl "0.2.1"]
                   [com.stuartsierra/component "0.3.1"]
                   [metosin/ring-http-response "0.6.5"]
-                  [prismatic/om-tools "0.4.0"]
-                  [prismatic/plumbing "0.5.3"]
-                  [prismatic/schema "1.1.1"]
                   [ring "1.4.0"]
                   [compojure "1.5.0"]
                   [hiccup "1.0.5"]
 
                   ; Frontend
-                  [org.omcljs/om "0.8.8"]
-                  [sablono "0.3.6"]
+                  [reagent "0.6.0-alpha2"]
 
                   ; LESS
                   [org.webjars/bootstrap "3.3.6"]

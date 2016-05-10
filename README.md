@@ -20,7 +20,7 @@ latest version.
 - Uses [component] and [reloaded.repl] to provide utilities to `start`,
   `stop` and `reset` (reload) the app.
 - Simple [Compojure][compojure] backend
-- Simple [Om][om] frontend
+- Simple [Reagent][reagent] frontend
 - [LESS][less] to write stylesheets
   - [boot-less] is able to import files from classpath
   - You can add dependency to e.g. bootstrap from [webjars][webjars] to
@@ -80,7 +80,7 @@ This work is published from:
 [component]: https://github.com/stuartsierra/component
 [reloaded.repl]: https://github.com/weavejester/reloaded.repl
 [compojure]: https://github.com/weavejester/compojure
-[om]: https://github.com/swannodette/om
+[reagent]: https://github.com/reagent-project/reagent
 [LESS]:http://lesscss.org/
 [boot-less]: https://github.com/Deraen/boot-less
 [webjars]: http://www.webjars.org
