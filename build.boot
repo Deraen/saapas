@@ -14,7 +14,7 @@
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
                   [adzerk/boot-reload     "0.4.7"      :scope "test"]
-                  [adzerk/boot-test       "1.1.1"      :scope "test"]
+                  [metosin/boot-alt-test  "0.1.0"      :scope "test"]
                   [deraen/boot-less       "0.5.0"      :scope "test"]
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
@@ -43,7 +43,7 @@
   '[adzerk.boot-cljs      :refer [cljs]]
   '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl repl-env]]
   '[adzerk.boot-reload    :refer [reload]]
-  '[adzerk.boot-test      :refer [test]]
+  '[metosin.boot-alt-test  :refer [alt-test]]
   '[deraen.boot-less      :refer [less]]
   '[deraen.boot-sass      :refer [sass]]
   '[deraen.boot-ctn       :refer [init-ctn!]]
@@ -83,15 +83,16 @@
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
-(deftask run-tests []
+(deftask run-tests
+  [c ci bool "If process should exit after test failure"]
   (comp
-   (test)
-   (test-cljs :namespaces #{"frontend.core-test"})))
+    (alt-test :fail (if (nil? ci) true ci))
+    (test-cljs :namespaces #{"frontend.core-test"})))
 
 (deftask autotest []
   (comp
     (watch)
-    (run-tests)))
+    (run-tests :ci false)))
 
 (deftask package
   "Build the package"
