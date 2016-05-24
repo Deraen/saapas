@@ -37,6 +37,7 @@ latest version.
 - `package` task creates uberjar
   - Cljs will be compiled using `:advanced` optimization
   - Uses minified react.js
+- `autotest` task to run Clj and Cljs tests whenever files are changed
 
 ## Usage
 
