@@ -4,8 +4,8 @@
             [common.hello :refer [foo-cljc]]
             [foo.bar]))
 
-(js/foo)
-
+;; Reagent application state
+;; Defonce used to that the state is kept between reloads
 (defonce app-state (r/atom {:y 2016}))
 
 (defn main []
@@ -27,7 +27,11 @@
   (js/console.log "Starting the app")
   (r/render-component [main] (js/document.getElementById "app")))
 
+;; When this namespace is (re)loaded the Reagent app is mounted to DOM
 (start!)
 
-; Macro test
+;; Macro test
 (foobar :abc 3)
+
+;; Example of interop call to plain JS in src/cljs/foo.js
+(js/foo)
