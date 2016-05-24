@@ -2,7 +2,10 @@
   (:require-macros [frontend.macro :refer [foobar]])
   (:require [reagent.core :as r]
             [common.hello :refer [foo-cljc]]
-            [foo.bar]))
+            [foo.bar]
+            [devtools.core :as devtools]))
+
+(devtools/install!)
 
 (js/foo)
 

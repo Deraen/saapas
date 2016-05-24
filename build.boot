@@ -33,6 +33,7 @@
 
                   ; Frontend
                   [reagent "0.6.0-alpha2"]
+                  [binaryage/devtools "0.6.1"]
 
                   ; LESS
                   [org.webjars/bootstrap "3.3.6"]
