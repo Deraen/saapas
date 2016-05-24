@@ -88,6 +88,7 @@
   [a autotest bool "If no exception should be thrown when tests fail"]
   (comp
     (alt-test :fail (not autotest))
+    ;; FIXME: This is not a good place to define which namespaces to test
     (test-cljs :namespaces #{"frontend.core-test"})))
 
 (deftask autotest []
