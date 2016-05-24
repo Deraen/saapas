@@ -6,14 +6,22 @@
 
 (js/foo)
 
-(defonce app-state (r/atom {:y 2015}))
+(defonce app-state (r/atom {:y 2016}))
 
 (defn main []
   [:div
    [:h1 (foo-cljc (:y @app-state))]
    [:div.btn-toolbar
-    [:button.btn.btn-danger {:type "button" :on-click #(swap! app-state update :y (partial + 5))} "+5"]
-    [:button.btn.btn-success {:type "button" :on-click #(swap! app-state update :y dec)} "-"]]])
+    [:button.btn.btn-danger
+     {:type "button"
+      :on-click #(swap! app-state update :y inc)} "+"]
+    [:button.btn.btn-success
+     {:type "button"
+      :on-click #(swap! app-state update :y dec)} "-"]
+    [:button.btn.btn-default
+     {:type "button"
+      :on-click #(js/console.log @app-state)}
+     "Console.log"]]])
 
 (defn start! []
   (js/console.log "Starting the app")
