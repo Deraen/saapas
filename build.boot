@@ -84,15 +84,15 @@
     (if speak (boot.task.built-in/speak) identity)))
 
 (deftask run-tests
-  [c ci bool "If process should exit after test failure"]
+  [a autotest bool "If no exception should be thrown when tests fail"]
   (comp
-    (alt-test :fail (if (nil? ci) true ci))
+    (alt-test :fail (not autotest))
     (test-cljs :namespaces #{"frontend.core-test"})))
 
 (deftask autotest []
   (comp
     (watch)
-    (run-tests :ci false)))
+    (run-tests :autotest true)))
 
 (deftask package
   "Build the package"
