@@ -6,14 +6,14 @@
   :dependencies '[[org.clojure/clojure    "1.8.0"]
                   [org.clojure/clojurescript "1.8.51"]
 
-                  [boot/core              "2.5.5"      :scope "test"]
+                  [boot/core              "2.6.0"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.228-1"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.3.0"      :scope "test"]
                   [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.7"      :scope "test"]
+                  [adzerk/boot-reload     "0.4.8"      :scope "test"]
                   [metosin/boot-alt-test  "0.1.0"      :scope "test"]
                   [deraen/boot-less       "0.5.0"      :scope "test"]
                   ;; For boot-less
