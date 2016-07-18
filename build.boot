@@ -3,17 +3,17 @@
   ; Just be careful to not AOT them
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[[org.clojure/clojure    "1.8.0"]
-                  [org.clojure/clojurescript "1.8.51"]
+  :dependencies '[[org.clojure/clojure    "1.9.0-alpha10"]
+                  [org.clojure/clojurescript "1.9.89"]
 
                   [boot/core              "2.6.0"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.228-1"  :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.3.0"      :scope "test"]
+                  [adzerk/boot-cljs-repl  "0.3.3"      :scope "test"]
                   [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.8"      :scope "test"]
+                  [adzerk/boot-reload     "0.4.11"     :scope "test"]
                   [metosin/boot-alt-test  "0.1.0"      :scope "test"]
                   [deraen/boot-less       "0.5.0"      :scope "test"]
                   ;; For boot-less
@@ -22,18 +22,18 @@
                   [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
                   ; Backend
-                  [http-kit "2.1.19"]
+                  [http-kit "2.2.0"]
                   [org.clojure/tools.namespace "0.2.11"]
-                  [reloaded.repl "0.2.1"]
+                  [reloaded.repl "0.2.2"]
                   [com.stuartsierra/component "0.3.1"]
-                  [metosin/ring-http-response "0.6.5"]
-                  [ring "1.4.0"]
-                  [compojure "1.5.0"]
+                  [metosin/ring-http-response "0.8.0"]
+                  [ring "1.5.0"]
+                  [compojure "1.5.1"]
                   [hiccup "1.0.5"]
 
                   ; Frontend
-                  [reagent "0.6.0-alpha2"]
-                  [binaryage/devtools "0.6.1"]
+                  [reagent "0.6.0-rc"]
+                  [binaryage/devtools "0.7.2"]
 
                   ; LESS
                   [org.webjars/bootstrap "3.3.6"]
