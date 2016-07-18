@@ -35,3 +35,6 @@
 
 ;; Example of interop call to plain JS in src/cljs/foo.js
 (js/foo)
+
+(comment
+  (println "foo"))
