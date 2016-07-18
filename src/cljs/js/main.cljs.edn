@@ -1,3 +1,4 @@
-{:require [frontend.init frontend.core]
+{:require [frontend.core]
  :compiler-options {:asset-path "js/main.out"
-                    :parallel-build true}}
+                    :parallel-build true
+                    :preloads [devtools.preload]}}
