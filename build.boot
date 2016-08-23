@@ -3,8 +3,8 @@
   ; Just be careful to not AOT them
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[[org.clojure/clojure    "1.9.0-alpha10"]
-                  [org.clojure/clojurescript "1.9.89"]
+  :dependencies '[[org.clojure/clojure    "1.9.0-alpha11"]
+                  [org.clojure/clojurescript "1.9.225"]
 
                   [boot/core              "2.6.0"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.228-1"  :scope "test"]
@@ -13,8 +13,8 @@
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.11"     :scope "test"]
-                  [metosin/boot-alt-test  "0.1.0"      :scope "test"]
+                  [adzerk/boot-reload     "0.4.12"     :scope "test"]
+                  [metosin/boot-alt-test  "0.1.2"      :scope "test"]
                   [deraen/boot-less       "0.5.0"      :scope "test"]
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
