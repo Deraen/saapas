@@ -19,11 +19,10 @@
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
                   [deraen/boot-sass       "0.2.1"      :scope "test"]
-                  [deraen/boot-ctn        "0.1.0"      :scope "test"]
 
                   ; Backend
                   [http-kit "2.2.0"]
-                  [org.clojure/tools.namespace "0.2.11"]
+                  [org.clojure/tools.namespace "0.3.0-alpha3"]
                   [reloaded.repl "0.2.2"]
                   [com.stuartsierra/component "0.3.1"]
                   [metosin/ring-http-response "0.8.0"]
@@ -47,13 +46,9 @@
   '[metosin.boot-alt-test  :refer [alt-test]]
   '[deraen.boot-less      :refer [less]]
   '[deraen.boot-sass      :refer [sass]]
-  '[deraen.boot-ctn       :refer [init-ctn!]]
   '[crisptrutski.boot-cljs-test :refer [test-cljs prep-cljs-tests run-cljs-tests]]
   '[backend.boot          :refer [start-app]]
   '[reloaded.repl         :refer [go reset start stop system]])
-
-; Watch boot temp dirs
-(init-ctn!)
 
 (task-options!
   pom {:project 'saapas
