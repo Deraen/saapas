@@ -3,8 +3,8 @@
   ; Just be careful to not AOT them
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[[org.clojure/clojure    "1.9.0-alpha11"]
-                  [org.clojure/clojurescript "1.9.225"]
+  :dependencies '[[org.clojure/clojure    "1.9.0-alpha13"]
+                  [org.clojure/clojurescript "1.9.229"]
 
                   [boot/core              "2.6.0"      :scope "test"]
                   [adzerk/boot-cljs       "1.7.228-1"  :scope "test"]
@@ -23,7 +23,7 @@
                   ; Backend
                   [http-kit "2.2.0"]
                   [org.clojure/tools.namespace "0.3.0-alpha3"]
-                  [reloaded.repl "0.2.2"]
+                  [reloaded.repl "0.2.3"]
                   [com.stuartsierra/component "0.3.1"]
                   [metosin/ring-http-response "0.8.0"]
                   [ring "1.5.0"]
@@ -31,8 +31,8 @@
                   [hiccup "1.0.5"]
 
                   ; Frontend
-                  [reagent "0.6.0-rc"]
-                  [binaryage/devtools "0.8.1"]
+                  [reagent "0.6.0"]
+                  [binaryage/devtools "0.8.2"]
 
                   ; LESS
                   [org.webjars/bootstrap "3.3.6"]
