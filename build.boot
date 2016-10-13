@@ -76,7 +76,8 @@
       (less))
     ; This starts a repl server with piggieback middleware
     (cljs-repl :ids #{"js/main"})
-    (cljs :ids #{"js/main"})
+    (cljs :ids #{"js/main"}
+          :compiler-options {:verbose true})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
