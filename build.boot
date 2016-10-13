@@ -13,12 +13,12 @@
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.12"     :scope "test"]
+                  [adzerk/boot-reload     "0.4.13-SNAPSHOT"     :scope "test"]
                   [metosin/boot-alt-test  "0.1.2"      :scope "test"]
-                  [deraen/boot-less       "0.5.0"      :scope "test"]
+                  [deraen/boot-less       "0.5.1-SNAPSHOT"      :scope "test"]
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
-                  [deraen/boot-sass       "0.2.1"      :scope "test"]
+                  [deraen/boot-sass       "0.3.0-SNAPSHOT"      :scope "test"]
 
                   ; Backend
                   [http-kit "2.2.0"]
@@ -58,7 +58,8 @@
   aot {:namespace #{'backend.main}}
   jar {:main 'backend.main}
   cljs {:source-map true}
-  less {:source-map true})
+  less {:source-map true}
+  sass {:source-map true})
 
 (deftask dev
   "Start the dev env..."
@@ -68,11 +69,11 @@
    t test-cljs       bool "Compile and run cljs tests"]
   (comp
     (watch)
+    (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s"
+            :ids #{"js/main"})
     (if use-sass
       (sass)
       (less))
-    (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s"
-            :ids #{"js/main"})
     ; This starts a repl server with piggieback middleware
     (cljs-repl :ids #{"js/main"})
     (cljs :ids #{"js/main"})
