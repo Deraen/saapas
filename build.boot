@@ -103,4 +103,5 @@
     (pom)
     (uber)
     (jar)
+    (sift :include #{#".*\.jar"})
     (target)))
