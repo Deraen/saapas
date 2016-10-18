@@ -7,18 +7,18 @@
                   [org.clojure/clojurescript "1.9.229"]
 
                   [boot/core              "2.6.0"      :scope "test"]
-                  [adzerk/boot-cljs       "1.7.228-1"  :scope "test"]
+                  [adzerk/boot-cljs       "1.7.228-2"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.3.3"      :scope "test"]
                   [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.13-SNAPSHOT"     :scope "test"]
+                  [adzerk/boot-reload     "0.4.13"     :scope "test"]
                   [metosin/boot-alt-test  "0.1.2"      :scope "test"]
-                  [deraen/boot-less       "0.5.1-SNAPSHOT"      :scope "test"]
+                  [deraen/boot-less       "0.6.0"      :scope "test"]
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
-                  [deraen/boot-sass       "0.3.0-SNAPSHOT"      :scope "test"]
+                  [deraen/boot-sass       "0.3.0"      :scope "test"]
 
                   ; Backend
                   [http-kit "2.2.0"]
