@@ -97,7 +97,8 @@
   []
   (comp
     (less :compression true)
-    (cljs :optimizations :advanced)
+    (cljs :optimizations :advanced
+          :compiler-options {:preloads nil})
     (aot)
     (pom)
     (uber)
