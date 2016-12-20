@@ -7,7 +7,7 @@
                   [org.clojure/clojurescript "1.9.293"]
 
                   [boot/core              "2.6.0"      :scope "test"]
-                  [adzerk/boot-cljs       "1.7.228-2"  :scope "test"]
+                  [adzerk/boot-cljs       "1.7.228-3-SNAPSHOT"  :scope "test"]
                   [adzerk/boot-cljs-repl  "0.3.3"      :scope "test"]
                   [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
@@ -31,7 +31,7 @@
                   [hiccup "1.0.5"]
 
                   ; Frontend
-                  [reagent "0.6.0"]
+                  [reagent "0.6.1-SNAPSHOT"]
                   [binaryage/devtools "0.8.2"]
 
                   ; LESS
