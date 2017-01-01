@@ -15,7 +15,7 @@
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
                   [adzerk/boot-reload     "0.4.13"     :scope "test"]
                   [metosin/boot-alt-test  "0.1.2"      :scope "test"]
-                  [deraen/boot-less       "0.6.0"      :scope "test"]
+                  [deraen/boot-less       "0.6.1"      :scope "test"]
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
                   [deraen/boot-sass       "0.3.0"      :scope "test"]
