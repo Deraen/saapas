@@ -3,19 +3,18 @@
   ; Just be careful to not AOT them
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[[org.clojure/clojure    "1.9.0-alpha13"]
-                  [org.clojure/clojurescript "1.9.293"]
+  :dependencies '[[org.clojure/clojure    "1.9.0-alpha14"]
+                  [org.clojure/clojurescript "1.9.456" :scope "test"]
 
-                  [boot/core              "2.6.0"      :scope "test"]
-                  [adzerk/boot-cljs       "1.7.228-3-SNAPSHOT"  :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.3.3"      :scope "test"]
+                  [adzerk/boot-cljs       "2.0.0-SNAPSHOT" :scope "test"]
+                  [adzerk/boot-cljs-repl  "0.3.4-SNAPSHOT" :scope "test"]
                   [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
                   [com.cemerick/piggieback "0.2.1"     :scope "test"]
                   [weasel                 "0.7.0"      :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
-                  [adzerk/boot-reload     "0.4.13"     :scope "test"]
-                  [metosin/boot-alt-test  "0.1.2"      :scope "test"]
-                  [deraen/boot-less       "0.6.1"      :scope "test"]
+                  [adzerk/boot-reload     "0.5.1-SNAPSHOT" :scope "test"]
+                  [metosin/boot-alt-test  "0.3.0"      :scope "test"]
+                  [deraen/boot-less       "0.6.2"      :scope "test"]
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
                   [deraen/boot-sass       "0.3.0"      :scope "test"]
