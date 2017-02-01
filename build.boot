@@ -7,11 +7,12 @@
                   [org.clojure/clojurescript "1.9.293" :scope "test"]
 
                   [adzerk/boot-cljs       "2.0.0-SNAPSHOT" :scope "test"]
-                  [adzerk/boot-cljs-repl  "0.3.3" :scope "test"]
-                  [crisptrutski/boot-cljs-test "0.2.2-SNAPSHOT" :scope "test"]
-                  [com.cemerick/piggieback "0.2.1"     :scope "test"]
-                  [weasel                 "0.7.0"      :scope "test"]
-                  [org.clojure/tools.nrepl "0.2.12"    :scope "test"]
+                  [crisptrutski/boot-cljs-test "0.3.0" :scope "test"]
+                  [doo "0.1.7" :scope "test"]
+                  [adzerk/boot-cljs-repl "0.3.3" :scope "test"]
+                  [com.cemerick/piggieback "0.2.1" :scope "test"]
+                  [weasel "0.7.0" :scope "test"]
+                  [org.clojure/tools.nrepl "0.2.12" :scope "test"]
                   [adzerk/boot-reload     "0.5.0" :scope "test"]
                   [metosin/boot-alt-test  "0.3.0"      :scope "test"]
                   [deraen/boot-less       "0.6.2"      :scope "test"]
@@ -80,16 +81,16 @@
     (if speak (boot.task.built-in/speak) identity)))
 
 (deftask run-tests
-  [a autotest bool "If no exception should be thrown when tests fail"]
+  []
   (comp
-    (alt-test :fail (not autotest))
+    (alt-test)
     ;; FIXME: This is not a good place to define which namespaces to test
     (test-cljs :namespaces #{"frontend.core-test"})))
 
 (deftask autotest []
   (comp
     (watch)
-    (run-tests :autotest true)))
+    (run-tests)))
 
 (deftask package
   "Build the package"
