@@ -6,7 +6,7 @@
 
 ;; Reagent application state
 ;; Defonce used to that the state is kept between reloads
-(defonce app-state (r/atom {:y 2016}))
+(defonce app-state (r/atom {:y 2017}))
 
 (defn main []
   [:div
