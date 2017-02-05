@@ -15,6 +15,7 @@
                   [org.clojure/tools.nrepl "0.2.12" :scope "test"]
                   [adzerk/boot-reload     "0.5.1" :scope "test"]
                   [metosin/boot-alt-test  "0.3.0"      :scope "test"]
+                  [metosin/boot-deps-size "0.1.0-SNAPSHOT" :scope "test"]
                   [deraen/boot-less       "0.6.2"      :scope "test"]
                   ;; For boot-less
                   [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
@@ -26,13 +27,13 @@
                   [reloaded.repl "0.2.3"]
                   [com.stuartsierra/component "0.3.1"]
                   [metosin/ring-http-response "0.8.0"]
-                  [ring "1.5.0"]
+                  [ring/ring-core "1.5.1"]
                   [compojure "1.5.1"]
                   [hiccup "1.0.5"]
 
                   ; Frontend
-                  [reagent "0.6.1-SNAPSHOT"]
-                  [binaryage/devtools "0.8.2"]
+                  [reagent "0.6.1-SNAPSHOT" :scope "test"]
+                  [binaryage/devtools "0.8.2" :scope "test"]
 
                   ; LESS
                   [org.webjars/bootstrap "3.3.6"]
@@ -44,6 +45,7 @@
   '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl repl-env]]
   '[adzerk.boot-reload    :refer [reload]]
   '[metosin.boot-alt-test  :refer [alt-test]]
+  '[metosin.boot-deps-size :refer [deps-size]]
   '[deraen.boot-less      :refer [less]]
   '[deraen.boot-sass      :refer [sass]]
   '[crisptrutski.boot-cljs-test :refer [test-cljs prep-cljs-tests run-cljs-tests]]
