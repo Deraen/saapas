@@ -82,7 +82,9 @@
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
-(deftask run-tests
+(ns-unmap *ns* 'test)
+
+(deftask test
   []
   (comp
     (alt-test)
@@ -92,7 +94,7 @@
 (deftask autotest []
   (comp
     (watch)
-    (run-tests)))
+    (test)))
 
 (deftask package
   "Build the package"
