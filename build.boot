@@ -73,7 +73,12 @@
    t test-cljs       bool "Compile and run cljs tests"]
   (comp
     (watch)
+    ;; It is important that catch-output is the first task, this way all other
+    ;; task can do everything they want with fileset, e.g. reload sees to output js files.
     (catch-output :paths #{"js/" "css/"})
+    ;; Start-app must be after catch-output, so the output directory exists.
+    (start-app :port port)
+    ;; Reload must be before any tasks that write files that should be reloaded.
     (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s"
             :ids #{"js/main"})
     (if use-sass
@@ -82,7 +87,6 @@
     ; This starts a repl server with piggieback middleware
     (cljs-repl :ids #{"js/main"})
     (cljs :ids #{"js/main"})
-    (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
 (ns-unmap *ns* 'test)
