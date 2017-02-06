@@ -2,7 +2,9 @@
   (:require-macros [frontend.macro :refer [foobar]])
   (:require [reagent.core :as r]
             [common.hello :refer [foo-cljc]]
-            [foo.bar]))
+            [foo.bar]
+            ;; use csk so the cljc files are copied to output
+            [camel-snake-kebab.core :as csk]))
 
 ;; Reagent application state
 ;; Defonce used to that the state is kept between reloads

@@ -31,6 +31,7 @@
                   [javax.servlet/servlet-api "2.5"] ;; Required by ring multipart middleware
                   [compojure "1.5.1"]
                   [hiccup "1.0.5"]
+                  [camel-snake-kebab "0.4.0"] ;; Cljc lib for testing c.t.n refresh
 
                   ; Frontend
                   [reagent "0.6.1-SNAPSHOT" :scope "test"]
