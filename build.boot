@@ -28,6 +28,7 @@
                   [com.stuartsierra/component "0.3.1"]
                   [metosin/ring-http-response "0.8.0"]
                   [ring/ring-core "1.5.1"]
+                  [javax.servlet/servlet-api "2.5"] ;; Required by ring multipart middleware
                   [compojure "1.5.1"]
                   [hiccup "1.0.5"]
 
@@ -48,7 +49,7 @@
   '[metosin.boot-deps-size :refer [deps-size]]
   '[deraen.boot-less      :refer [less]]
   '[deraen.boot-sass      :refer [sass]]
-  '[crisptrutski.boot-cljs-test :refer [test-cljs prep-cljs-tests run-cljs-tests]]
+  '[crisptrutski.boot-cljs-test :refer [test-cljs]]
   '[backend.boot          :refer [start-app]]
   '[reloaded.repl         :refer [go reset start stop system]])
 

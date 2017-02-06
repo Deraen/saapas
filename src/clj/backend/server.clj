@@ -6,7 +6,6 @@
             [compojure.handler :refer [api]]
             [ring.util.response :refer [redirect]]
             [ring.util.http-response :refer :all]
-            [ring.middleware.reload :refer [wrap-reload]]
             [org.httpkit.server :refer [run-server]]
             [backend.index :refer [index-page test-page]]))
 
