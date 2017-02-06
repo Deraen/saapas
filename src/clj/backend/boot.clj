@@ -60,10 +60,10 @@
   "Like compojure.route/resources, but serves files from tmp-dir when used with catch-output task,
   and else from classpath."
   [prefix {:keys [root] :as opts}]
-  (if-let [x (some-> (get-app-output-dir) .getPath)]
+  (if-let [output-dir (get-app-output-dir)]
     (fn [req]
       (if (.startsWith (:uri req) prefix)
-        (response/file-response (subs (:uri req) (count prefix)) (assoc opts :root (str x File/separator root)))))
+        (response/file-response (subs (:uri req) (count prefix)) (assoc opts :root (.getPath (clojure.java.io/file output-dir root))))))
     (fn [req]
       (if (.startsWith (:uri req) prefix)
         (response/resource-response (subs (:uri req) (count prefix)) opts)))))
