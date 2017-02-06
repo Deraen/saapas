@@ -73,6 +73,7 @@
    t test-cljs       bool "Compile and run cljs tests"]
   (comp
     (watch)
+    (catch-output :paths #{"js/" "css/"})
     (reload :open-file "vim --servername saapas --remote-silent +norm%sG%s| %s"
             :ids #{"js/main"})
     (if use-sass
@@ -81,7 +82,6 @@
     ; This starts a repl server with piggieback middleware
     (cljs-repl :ids #{"js/main"})
     (cljs :ids #{"js/main"})
-    (catch-output :paths #{"js/" "css/"})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 

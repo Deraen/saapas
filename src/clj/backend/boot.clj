@@ -28,7 +28,10 @@
 
 (b/deftask catch-output
   "Copy files in fileset with output role under these paths into
-  a tmp-dir and remove the files from fileset."
+  a tmp-dir and remove the files from fileset.
+
+  Has to be on pipeline before reload and any other tasks that try to read
+  files from classpath. Probably this task should be just after watch task."
   [p paths PATH #{str} "Paths"]
   (let [prev (atom nil)]
 
@@ -36,7 +39,8 @@
 
     (fn middleware [next-task]
       (fn handler [fileset]
-        (let [prev-output-fileset @prev
+        (let [fileset (next-task fileset)
+              prev-output-fileset @prev
               output-dirs (set (b/output-dirs fileset))
               [tree output-tree] (reduce-kv (fn [[tree output-tree] k v]
                                               (if (and (contains? output-dirs (boot.tmpdir/dir v))
@@ -54,7 +58,7 @@
             (catch Throwable t
               (fs/patch! (fs/->path @output-dir) prev-output-fileset output-fileset :link nil)))
 
-          (next-task (b/commit! (assoc fileset :tree tree))))))))
+          (b/commit! (assoc fileset :tree tree)))))))
 
 (defn resources
   "Like compojure.route/resources, but serves files from tmp-dir when used with catch-output task,
