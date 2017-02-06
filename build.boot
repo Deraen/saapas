@@ -51,7 +51,7 @@
   '[deraen.boot-less      :refer [less]]
   '[deraen.boot-sass      :refer [sass]]
   '[crisptrutski.boot-cljs-test :refer [test-cljs]]
-  '[backend.boot          :refer [start-app]]
+  '[backend.boot          :refer [start-app catch-output]]
   '[reloaded.repl         :refer [go reset start stop system]])
 
 (task-options!
@@ -81,6 +81,7 @@
     ; This starts a repl server with piggieback middleware
     (cljs-repl :ids #{"js/main"})
     (cljs :ids #{"js/main"})
+    (catch-output :paths #{"js/" "css/"})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
