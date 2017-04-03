@@ -3,8 +3,8 @@
   ; Just be careful to not AOT them
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[[org.clojure/clojure    "1.9.0-alpha14"]
-                  [org.clojure/clojurescript "1.9.293" :scope "test"]
+  :dependencies '[[org.clojure/clojure    "1.9.0-alpha15"]
+                  [org.clojure/clojurescript "1.9.495" :scope "test"]
 
                   [adzerk/boot-cljs       "2.0.0-SNAPSHOT" :scope "test"]
                   [crisptrutski/boot-cljs-test "0.3.0" :scope "test"]
