@@ -35,6 +35,7 @@
                   ; Frontend
                   [reagent "0.6.1-SNAPSHOT" :scope "test"]
                   [binaryage/devtools "0.8.2" :scope "test"]
+                  [cljsjs/babel-standalone "6.18.1-1" :scope "test"]
 
                   ; LESS
                   [org.webjars/bootstrap "3.3.6"]

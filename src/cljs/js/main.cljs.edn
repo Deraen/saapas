@@ -2,4 +2,8 @@
                     :asset-path "js/main.out"
                     :parallel-build true
                     :preloads [devtools.preload]
-                    :external-config {:devtools/config {:features-to-install [:formatters :hints :async]}}}}
+                    :external-config {:devtools/config {:features-to-install [:formatters :hints :async]}}
+                    :foreign-libs [{:file "src/cljs/js/"
+                                    :module-type :es6
+                                    :preprocess :cljsjs.babel-standalone/babel
+                                    :cljsjs.babel-standalone/babel-opts {:presets ["react" "es2016"]}}]}
