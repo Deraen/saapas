@@ -60,7 +60,6 @@
        :license {"The MIT License (MIT)" "http://opensource.org/licenses/mit-license.php"}}
   aot {:namespace #{'backend.main}}
   jar {:main 'backend.main}
-  cljs {:source-map true}
   less {:source-map true}
   sass {:source-map true})
 
