@@ -1,7 +1,8 @@
 (ns frontend.core
-  (:require-macros [frontend.macro :refer [foobar]])
+  (:require-macros [frontend.macro :refer [foobar]]
+                   [common.hello])
   (:require [reagent.core :as r]
-            [common.hello :refer [foo-cljc]]
+            [common.hello :as h :refer [foo-cljc]]
             [foo.bar]))
 
 ;; Reagent application state

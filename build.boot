@@ -34,6 +34,7 @@
 
                   ; Frontend
                   [reagent "0.6.1-SNAPSHOT" :scope "test"]
+                  [org.omcljs/om "1.0.0-alpha47"]
                   [binaryage/devtools "0.8.2" :scope "test"]
 
                   ; LESS
