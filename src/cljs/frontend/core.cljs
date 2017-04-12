@@ -36,5 +36,11 @@
 ;; Example of interop call to plain JS in src/cljs/foo.js
 (js/foo)
 
+(goog-define MODE "nil")
+(goog-define DEFAULT "nil")
+
+(js/console.log "mode" MODE)
+(js/console.log "default" DEFAULT)
+
 (comment
   (println "foo"))

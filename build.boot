@@ -79,7 +79,8 @@
       (less))
     ; This starts a repl server with piggieback middleware
     (cljs-repl :ids #{"js/main"})
-    (cljs :ids #{"js/main"})
+    (cljs :ids #{"js/main"}
+          :compiler-options {:closure-defines {'frontend.core/MODE "dev"}})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
@@ -103,7 +104,8 @@
   (comp
     (less :compression true)
     (cljs :optimizations :advanced
-          :compiler-options {:preloads nil})
+          :compiler-options {:preloads nil
+                             :closure-defines {'frontend.core/MODE "prod"}})
     (aot)
     (pom)
     (uber)
