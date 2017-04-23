@@ -1,13 +1,14 @@
 (ns backend.server
   (:require [clojure.java.io :as io]
+            [backend.boot :refer [resources]]
             [com.stuartsierra.component :as component]
             [compojure.core :refer [GET defroutes]]
-            [compojure.route :refer [resources]]
             [compojure.handler :refer [api]]
             [ring.util.response :refer [redirect]]
             [ring.util.http-response :refer :all]
             [org.httpkit.server :refer [run-server]]
-            [backend.index :refer [index-page test-page]]))
+            [backend.index :refer [index-page test-page]]
+            [camel-snake-kebab.core :as csk]))
 
 (defroutes routes
   (resources "/js" {:root "js"})
