@@ -7,5 +7,5 @@ export var sayThings = function(xs) {
     }
 };
 export var reactHello = function() {
-    return <div>Hello world!</div>
+    return <p>Hello from JSX!</p>;
 };

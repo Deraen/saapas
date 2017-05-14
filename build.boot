@@ -6,7 +6,7 @@
   :dependencies '[[org.clojure/clojure    "1.9.0-alpha15"]
                   [org.clojure/clojurescript "1.9.495" :scope "test"]
 
-                  [adzerk/boot-cljs       "2.0.0" :scope "test"]
+                  [adzerk/boot-cljs       "2.1.0-SNAPSHOT" :scope "test"]
                   [crisptrutski/boot-cljs-test "0.3.0" :scope "test"]
                   [doo "0.1.7" :scope "test"]
                   [adzerk/boot-cljs-repl "0.3.3" :scope "test"]

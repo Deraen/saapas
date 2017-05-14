@@ -7,3 +7,4 @@
                                     :module-type :es6
                                     :preprocess :cljsjs.babel-standalone/babel
                                     :cljsjs.babel-standalone/babel-opts {:presets ["react" "es2016"]}}]}
+ :compiler-pod-init (println "Boot-cljs compiler pod is being created...")}
