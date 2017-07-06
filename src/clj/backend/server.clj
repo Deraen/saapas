@@ -10,6 +10,8 @@
             [backend.index :refer [index-page test-page]]))
 
 (defroutes routes
+  ;; Note: when running uberjar from project dir, it is
+  ;; possible that this dir exists.
   (if (.exists (io/file "dev-output/js"))
     (files "/js" {:root "dev-output/js"})
     (resources "/js" {:root "js"}))
