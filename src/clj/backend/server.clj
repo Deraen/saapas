@@ -2,7 +2,7 @@
   (:require [clojure.java.io :as io]
             [com.stuartsierra.component :as component]
             [compojure.core :refer [GET defroutes]]
-            [compojure.route :refer [resources]]
+            [compojure.route :refer [resources files]]
             [compojure.handler :refer [api]]
             [ring.util.response :refer [redirect]]
             [ring.util.http-response :refer :all]
@@ -10,8 +10,13 @@
             [backend.index :refer [index-page test-page]]))
 
 (defroutes routes
-  (resources "/js" {:root "js"})
-  (resources "/css" {:root "css"})
+  (if (.exists (io/file "dev-output/js"))
+    (files "/js" {:root "dev-output/js"})
+    (resources "/js" {:root "js"}))
+
+  (if (.exists (io/file "dev-output/css"))
+    (files "/css" {:root "dev-output/css"})
+    (resources "/css" {:root "css"}))
 
   (GET "/" []
     ; Use (resource-response "index.html") to serve index.html from classpath

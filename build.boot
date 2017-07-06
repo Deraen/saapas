@@ -80,6 +80,10 @@
     ; This starts a repl server with piggieback middleware
     (cljs-repl :ids #{"js/main"})
     (cljs :ids #{"js/main"})
+    ;; Remove cljs output from classpath but keep with output role
+    (sift :to-asset #{#"^js/.*"})
+    ;; Write the resources to filesystem for dev server
+    (target :dir #{"dev-output"})
     (start-app :port port)
     (if speak (boot.task.built-in/speak) identity)))
 
