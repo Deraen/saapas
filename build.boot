@@ -33,7 +33,7 @@
                   [hiccup "1.0.5"]
 
                   ; Frontend
-                  [reagent "0.6.1-SNAPSHOT" :scope "test"]
+                  [reagent "0.7.0" :scope "test"]
                   [binaryage/devtools "0.8.2" :scope "test"]
                   [cljsjs/babel-standalone "6.18.1-1" :scope "test"]
 

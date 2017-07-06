@@ -2,8 +2,7 @@
   (:require-macros [frontend.macro :refer [foobar]])
   (:require [reagent.core :as r]
             [common.hello :refer [foo-cljc]]
-            [foo.bar]
-            [hello :refer [reactHello]]))
+            [foo.bar]))
 
 ;; Reagent application state
 ;; Defonce used to that the state is kept between reloads
@@ -22,8 +21,7 @@
     [:button.btn.btn-default
      {:type "button"
       :on-click #(js/console.log @app-state)}
-     "Console.log"]]
-   [reactHello]])
+     "Console.log"]]])
 
 (defn start! []
   (js/console.log "Starting the app")
