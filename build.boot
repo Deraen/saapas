@@ -4,43 +4,43 @@
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.9.0-alpha15"]
-                  [org.clojure/clojurescript "1.9.495" :scope "test"]
+                  [org.clojure/clojurescript "1.9.854" :scope "test"]
 
-                  [adzerk/boot-cljs       "2.1.0-SNAPSHOT" :scope "test"]
-                  [crisptrutski/boot-cljs-test "0.3.0" :scope "test"]
+                  [adzerk/boot-cljs       "2.1.1" :scope "test"]
+                  [crisptrutski/boot-cljs-test "0.3.1" :scope "test"]
                   [doo "0.1.7" :scope "test"]
                   [adzerk/boot-cljs-repl "0.3.3" :scope "test"]
-                  [com.cemerick/piggieback "0.2.1" :scope "test"]
+                  [com.cemerick/piggieback "0.2.2" :scope "test"]
                   [weasel "0.7.0" :scope "test"]
-                  [org.clojure/tools.nrepl "0.2.12" :scope "test"]
+                  [org.clojure/tools.nrepl "0.2.13" :scope "test"]
                   [adzerk/boot-reload     "0.5.1" :scope "test"]
-                  [metosin/boot-alt-test  "0.3.0"      :scope "test"]
+                  [metosin/boot-alt-test  "0.3.2"      :scope "test"]
                   [metosin/boot-deps-size "0.1.0" :scope "test"]
                   [deraen/boot-less       "0.6.2"      :scope "test"]
                   ;; For boot-less
-                  [org.slf4j/slf4j-nop    "1.7.21"     :scope "test"]
-                  [deraen/boot-sass       "0.3.0"      :scope "test"]
+                  [org.slf4j/slf4j-nop    "1.7.25"     :scope "test"]
+                  [deraen/boot-sass       "0.3.1"      :scope "test"]
 
                   ; Backend
                   [http-kit "2.2.0"]
-                  [org.clojure/tools.namespace "0.3.0-alpha3"]
+                  [org.clojure/tools.namespace "0.3.0-alpha4"]
                   [reloaded.repl "0.2.3"]
-                  [com.stuartsierra/component "0.3.1"]
-                  [metosin/ring-http-response "0.8.0"]
-                  [ring/ring-core "1.5.1"]
+                  [com.stuartsierra/component "0.3.2"]
+                  [metosin/ring-http-response "0.9.0"]
+                  [ring/ring-core "1.6.2"]
                   [javax.servlet/servlet-api "2.5"] ;; Required by ring multipart middleware
-                  [compojure "1.5.1"]
+                  [compojure "1.6.0"]
                   [hiccup "1.0.5"]
 
                   ; Frontend
-                  [reagent "0.7.0" :scope "test"]
-                  [binaryage/devtools "0.8.2" :scope "test"]
-                  [cljsjs/babel-standalone "6.18.1-1" :scope "test"]
+                  [reagent "0.8.0-alpha1" :scope "test"]
+                  [binaryage/devtools "0.9.4" :scope "test"]
+                  [cljsjs/babel-standalone "6.18.1-3" :scope "test"]
 
                   ; LESS
-                  [org.webjars/bootstrap "3.3.6"]
+                  [org.webjars/bootstrap "3.3.7-1"]
                   ; SASS
-                  [org.webjars.bower/bootstrap "4.0.0-alpha" :exclusions [org.webjars.bower/jquery]]])
+                  [org.webjars.bower/bootstrap "4.0.0-alpha.6" :exclusions [org.webjars.bower/jquery]]])
 
 (require
   '[adzerk.boot-cljs      :refer [cljs]]

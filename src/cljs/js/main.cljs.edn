@@ -2,5 +2,11 @@
                     :asset-path "js/main.out"
                     :parallel-build true
                     :preloads [devtools.preload]
-                    :external-config {:devtools/config {:features-to-install [:formatters :hints :async]}}}
- :compiler-pod-init (println "Boot-cljs compiler pod is being created...")}
+                    :external-config {:devtools/config {:features-to-install [:formatters :hints :async]}}
+                    ;; Node deps test
+                    ; :install-deps true
+                    ; :shim-process true
+                    ; :npm-deps {:react "15.6.1"
+                    ;            :react-dom "15.6.1"
+                    ;            :create-react-class "15.5.3"}
+                    }}
