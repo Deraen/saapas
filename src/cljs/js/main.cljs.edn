@@ -5,7 +5,7 @@
                     :external-config {:devtools/config {:features-to-install [:formatters :hints :async]}}
                     ;; Node deps test
                     ; :install-deps true
-                    ; :shim-process true
+                    ; :process-shim true
                     ; :npm-deps {:react "15.6.1"
                     ;            :react-dom "15.6.1"
                     ;            :create-react-class "15.5.3"}
