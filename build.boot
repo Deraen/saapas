@@ -3,12 +3,12 @@
   ; Just be careful to not AOT them
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
-  :dependencies '[[org.clojure/clojure    "1.9.0-alpha17"]
-                  [org.clojure/clojurescript "1.9.908" :scope "test"]
+  :dependencies '[[org.clojure/clojure    "1.9.0"]
+                  [org.clojure/clojurescript "1.10.238" :scope "test"]
 
-                  [adzerk/boot-cljs       "2.1.3" :scope "test"]
+                  [adzerk/boot-cljs       "2.1.4" :scope "test"]
                   [crisptrutski/boot-cljs-test "0.3.4" :scope "test"]
-                  [doo "0.1.7" :scope "test"]
+                  [doo "0.1.10" :scope "test"]
                   [adzerk/boot-cljs-repl "0.3.3" :scope "test"]
                   [com.cemerick/piggieback "0.2.2" :scope "test"]
                   [weasel "0.7.0" :scope "test"]
@@ -22,19 +22,19 @@
                   [deraen/boot-sass       "0.3.1"      :scope "test"]
 
                   ; Backend
-                  [http-kit "2.2.0"]
+                  [http-kit "2.3.0"]
                   [org.clojure/tools.namespace "0.3.0-alpha4"]
-                  [reloaded.repl "0.2.3"]
+                  [reloaded.repl "0.2.4"]
                   [com.stuartsierra/component "0.3.2"]
                   [metosin/ring-http-response "0.9.0"]
-                  [ring/ring-core "1.6.2"]
+                  [ring/ring-core "1.6.3"]
                   [javax.servlet/servlet-api "2.5"] ;; Required by ring multipart middleware
-                  [compojure "1.6.0"]
+                  [compojure "1.6.1"]
                   [hiccup "1.0.5"]
 
                   ; Frontend
-                  [reagent "0.8.0-alpha1" :scope "test"]
-                  [binaryage/devtools "0.9.4" :scope "test"]
+                  [reagent "0.8.1" :scope "test"]
+                  [binaryage/devtools "0.9.10" :scope "test"]
                   [cljsjs/babel-standalone "6.18.1-3" :scope "test"]
 
                   ; LESS
