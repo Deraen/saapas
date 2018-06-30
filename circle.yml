@@ -1,0 +1,15 @@
+jobs:
+  test:
+    working_directory: ~/work
+    docker:
+      - image: circleci/clojure:boot-2.8.1-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: saapas-{{ checksum "boot.properties" }}-{{ checksum "build.boot" }}
+      - run: boot test
+      - save_cache:
+          paths:
+            - ~/.m2
+            - ~/.boot
+          key: saapas-{{ checksum "boot.properties" }}-{{ checksum "build.boot" }}
