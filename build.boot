@@ -8,7 +8,7 @@
 
                   [adzerk/boot-cljs       "2.1.4" :scope "test"]
                   [crisptrutski/boot-cljs-test "0.3.4" :scope "test"]
-                  [doo "0.1.10" :scope "test"]
+                  [doo "0.1.8" :scope "test"]
                   [adzerk/boot-cljs-repl "0.3.3" :scope "test"]
                   [com.cemerick/piggieback "0.2.2" :scope "test"]
                   [weasel "0.7.0" :scope "test"]
