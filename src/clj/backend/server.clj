@@ -12,13 +12,15 @@
 (defroutes routes
   ;; Note: when running uberjar from project dir, it is
   ;; possible that this dir exists.
-  (if (.exists (io/file "dev-output/js"))
-    (files "/js" {:root "dev-output/js"})
-    (resources "/js" {:root "js"}))
+  ; (if (.exists (io/file "dev-output/js"))
+  ;   (files "/js" {:root "dev-output/js"})
+    (resources "/js" {:root "js"})
+    ; )
 
-  (if (.exists (io/file "dev-output/css"))
-    (files "/css" {:root "dev-output/css"})
-    (resources "/css" {:root "css"}))
+  ; (if (.exists (io/file "dev-output/css"))
+  ;   (files "/css" {:root "dev-output/css"})
+    (resources "/css" {:root "css"})
+    ; )
 
   (GET "/" []
     ; Use (resource-response "index.html") to serve index.html from classpath

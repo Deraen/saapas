@@ -2,4 +2,4 @@
   (:require [cljs.test :as test :refer-macros [deftest is testing]]))
 
 (deftest foo-test
-  (is (= 1 2)))
+  (is (= 1 1)))

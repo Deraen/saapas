@@ -4,7 +4,7 @@
   :source-paths #{"src/cljs" "src/less" "src/scss" "test/clj" "test/cljs"}
   :resource-paths #{"src/clj" "src/cljc"}
   :dependencies '[[org.clojure/clojure    "1.9.0"]
-                  [org.clojure/clojurescript "1.10.238" :scope "test"]
+                  [org.clojure/clojurescript "1.10.339" :scope "test"]
 
                   [adzerk/boot-cljs       "2.1.4" :scope "test"]
                   [crisptrutski/boot-cljs-test "0.3.4" :scope "test"]
@@ -13,7 +13,7 @@
                   [com.cemerick/piggieback "0.2.2" :scope "test"]
                   [weasel "0.7.0" :scope "test"]
                   [org.clojure/tools.nrepl "0.2.13" :scope "test"]
-                  [adzerk/boot-reload     "0.5.2" :scope "test"]
+                  [adzerk/boot-reload     "0.6.0-SNAPSHOT" :scope "test"]
                   [metosin/boot-alt-test  "0.3.2"      :scope "test"]
                   [metosin/boot-deps-size "0.1.0" :scope "test"]
                   [deraen/boot-less       "0.6.2"      :scope "test"]
@@ -40,7 +40,7 @@
                   ; LESS
                   [org.webjars/bootstrap "3.3.7-1"]
                   ; SASS
-                  [org.webjars.bower/bootstrap "4.0.0-alpha.6" :exclusions [org.webjars.bower/jquery]]])
+                  [org.webjars.bower/bootstrap "4.1.1" :exclusions [org.webjars.bower/jquery]]])
 
 (require
   '[adzerk.boot-cljs      :refer [cljs]]
