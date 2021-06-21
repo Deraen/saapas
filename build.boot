@@ -13,7 +13,7 @@
                   [cider/piggieback "0.3.9" :scope "test"]
                   [weasel "0.7.0" :scope "test"]
                   [nrepl "0.4.5" :scope "test"]
-                  [adzerk/boot-reload     "0.6.0-SNAPSHOT" :scope "test"]
+                  [adzerk/boot-reload     "0.6.1" :scope "test"]
                   [metosin/boot-alt-test  "0.3.2"      :scope "test"]
                   [metosin/boot-deps-size "0.1.0" :scope "test"]
                   [deraen/boot-less       "0.6.2"      :scope "test"]
